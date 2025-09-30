@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find the perfect laptop for your campus needs. Get personalized recommendations based on your school and budget.">
+  <meta name="keywords" content="laptop, campus, student, engineering, business, design, recommendations">
+  <meta name="author" content="MUST Tech Center">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title>HOME | MUST TECH CENTER</title>
+</head>
+
+<body>
+  <!-- Header -->
+ <header class="glass-header">
+  <div class="header-content">
+    <a href="index.html" class="brand">
+      <span class="brand-main">MUST</span>
+      <span class="brand-sub">Tech Center</span>
+    </a>
+    
+    <nav class="main-nav">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link"><span>Home</span></a></li>
+          <li><a href="Recommendations.html" class="nav-link"><span>Recommendations</span></a></li>
+          <li><a href="reviews.html" class="nav-link"><span>Reviews</span></a></li>
+          <li><a href="comparison.html" class="nav-link"><span>Comparisons</span></a></li>
+          <li><a href="about.html" class="nav-link"><span>About</span></a></li>
+        </ul>
+        <div class="nav-indicator"></div>
+      </div>
+    </nav>
+    
+    <button class="hamburger" aria-label="Menu">
+      <div class="hamburger-inner"></div>
+    </button>
+  </div>
+</header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Find the Perfect Laptop for Your Campus Needs</h2>
+      <p>Get personalized laptop recommendations based on your school and budget.</p>
+      <a href="#" class="cta-button" id="get-started-button">Get Started</a> 
+    </div>
+  </section>
+
+  <!-- Get Started Modal -->
+  <div id="get-started-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Get Started</h2>
+      <form id="get-started-form">
+        <label for="school">Select Your School:</label>
+        <select id="school" name="school" required>
+          <option value="">-- Select School --</option>
+          <option value="Engineering">Engineering & Architecture</option>
+          <option value="Applied Sciences">School of Applied Sciences & Statistics</option>
+          <option value="Education">Education</option>
+          <option value="Schoolofcomputing">School of Computing & Informatics</option>
+        </select>
+
+        <label for="course">Select Your Course:</label>
+        <select id="course" name="course" required>
+          <option value="">-- Select Course --</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Data Science">Data Science</option>
+          <option value="Graphic Design">Graphic Design</option>
+          <option value="Business Information Technology">Business Information Technology</option>
+          <option value="Sciences">Sciences</option>
+          <option value="Arts">Arts</option>
+          <option value="Artificial Intelligence">Artificial Intelligence</option>
+          <option value="Blockchain Technology">Blockchain Technology</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Computer Forensics">Computer Forensics</option>
+          <option value="Cyber Security">Cyber Security</option>
+          <option value="Data Sciense">Data Science</option>
+          <option value="Information Systems">Information Systems</option>
+          <option value="Mobile Application Development">Mobile Application Development</option>
+          <option value="Network and System Administration">Network and System Administration</option>
+          <option value="Software Engineering">Software Engineering</option>
+          <option value="Actuarial Science">Actuarial Science</option>
+          <option value="Agriculture and Biotechnology">Agriculture and Biotechnology</option>
+          <option value="Agricultural Economics">Agricultural Economics</option>
+          <option value="Architecture">Architecture</option>
+          <option value="Automotive Engineering">Automotive Engineering</option>
+          <option value="Banking and Finance">Banking and Finance</option>
+          <option value="Biochemistry">Biochemistry</option>
+          <option value="Biomedical Engineering">Biomedical Engineering</option>
+          <option value="Building and Civil Engineering">Building and Civil Engineering</option>
+          <option value="Commerce">Commerce</option>
+          <option value="Communication and Media Studies">Communication and Media Studies</option>
+          <option value="Community Development">Community Development</option>
+          <option value="Criminology">Criminology</option>
+          <option value="Artificial Intelligence">Artificial Intelligence</option>
+<option value="Blockchain Technology">Blockchain Technology</option>
+<option value="Computer Science">Computer Science</option>
+<option value="Computer Forensics">Computer Forensics</option>
+<option value="Cyber Security">Cyber Security</option>
+<option value="Data Science">Data Science</option>
+<option value="Information Systems">Information Systems</option>
+<option value="Mobile Application Development">Mobile Application Development</option>
+<option value="Network and System Administration">Network and System Administration</option>
+<option value="Software Engineering">Software Engineering</option>
+<option value="Information Technology">Information Technology</option>
+<option value="Data Analytics">Data Analytics</option>
+<option value="Web Development">Web Development</option>
+<option value="Cloud Computing">Cloud Computing</option>
+<option value="IT Project Management">IT Project Management</option>
+<option value="Human-Computer Interaction">Human-Computer Interaction</option>
+<option value="Game Development">Game Development</option>
+<option value="Machine Learning">Machine Learning</option>
+<option value="Big Data Technologies">Big Data Technologies</option>
+<option value="IT Security Management">IT Security Management</option>
+<option value="Augmented Reality and Virtual Reality">Augmented Reality and Virtual Reality</option>
+<option value="Digital Transformation">Digital Transformation</option>
+<option value="E-commerce Technologies">E-commerce Technologies</option>
+<option value="Robotics and Automation">Robotics and Automation</option>
+<option value="bookmark" hidden="hidden">King Muli</option>
+<option value="Smart Systems">Smart Systems</option>
+<option value="Multimedia Systems">Multimedia Systems</option>
+<option value="DevOps Engineering">DevOps Engineering</option>
+<option value="Embedded Systems">Embedded Systems</option>
+<option value="Systems Analysis and Design">Systems Analysis and Design</option>
+<option value="Internet of Things (IoT)">Internet of Things (IoT)</option>
+<option value="Bioinformatics">Bioinformatics</option>
+<option value="Accounting and Finance">Accounting and Finance</option>
+<option value="Agricultural Economics">Agricultural Economics</option>
+<option value="Architecture">Architecture</option>
+<option value="Biochemistry">Biochemistry</option>
+<option value="Business Administration">Business Administration</option>
+<option value="Clinical Medicine">Clinical Medicine</option>
+<option value="Communication and Media Studies">Communication and Media Studies</option>
+<option value="Criminology">Criminology</option>
+<option value="Dentistry">Dentistry</option>
+<option value="Early Childhood Education">Early Childhood Education</option>
+<option value="Economics">Economics</option>
+<option value="Education (Arts)">Education (Arts)</option>
+<option value="Education (Science)">Education (Science)</option>
+<option value="Environmental Science">Environmental Science</option>
+<option value="Hospitality and Tourism Management">Hospitality and Tourism Management</option>
+<option value="International Relations">International Relations</option>
+<option value="Law">Law</option>
+<option value="Mechanical Engineering">Mechanical Engineering</option>
+<option value="Nursing">Nursing</option>
+<option value="Pharmacy">Pharmacy</option>
+<option value="Early Childhood Education">Early Childhood Education</option>
+<option value="Economics">Economics</option>
+<option value="Education (Arts)">Education (Arts)</option>
+<option value="Education (Science)">Education (Science)</option>
+<option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+<option value="Entrepreneurship">Entrepreneurship</option>
+<option value="Environmental Science">Environmental Science</option>
+<option value="Fashion Design and Marketing">Fashion Design and Marketing</option>
+<option value="Food Science and Technology">Food Science and Technology</option>
+<option value="Forensic Science">Forensic Science</option>
+<option value="Hotel and Hospitality Management">Hotel and Hospitality Management</option>
+<option value="Information Technology">Information Technology</option>
+<option value="Law">Law</option>
+<option value="Mechanical Engineering">Mechanical Engineering</option>
+<option value="Medicine and Surgery">Medicine and Surgery</option>
+<option value="Nursing">Nursing</option>
+
+
+        </select>
+
+        <button type="submit" class="cta-button">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Featured Laptops -->
+  <section class="featured-laptops">
+    <h2>Top Picks for Students</h2>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button onclick="filterLaptops('All')" aria-label="Show All Laptops">All</button>
+      <button onclick="filterLaptops('Engineering')" aria-label="Filter Engineering Laptops">Engineering</button>
+      <button onclick="filterLaptops('Business')" aria-label="Filter Business Laptops">Business</button>
+      <button onclick="filterLaptops('Education')" aria-label="Filter Design Laptops">Education</button>
+    </div>
+
+    <!-- Laptop Grid -->
+    <div class="laptop-grid">
+      <!-- Laptop 1 -->
+      <div class="laptop-card" data-category="Engineering" data-id="0">
+        <img src="images/dell-xps-15.jpeg" alt="Dell XPS 15">
+        <h3>Dell XPS 15</h3>
+        <p><strong>Features:</strong></p>
+        <ul>
+          <li>Intel Core i7 Processor</li>
+          <li>16GB RAM</li>
+          <li>512GB SSD</li>
+          <li>15.6" 4K Display</li>
+        </ul>
+        <a href="#" class="details-button">View Details</a>
+      </div>
+
+      <!-- Laptop 2 -->
+      <div class="laptop-card" data-category="Business" data-id="1">
+        <img src="images/macbook-air.jpeg" alt="MacBook Air">
+        <h3>MacBook Air</h3>
+        <p><strong>Features:</strong></p>
+        <ul>
+          <li>Apple M1 Chip</li>
+          <li>8GB RAM</li>
+          <li>256GB SSD</li>
+          <li>13.3" Retina Display</li>
+        </ul>
+        <a href="#" class="details-button">View Details</a>
+      </div>
+
+      <!-- Laptop 3 -->
+      <div class="laptop-card" data-category="Education" data-id="2">
+        <img src="images/hp-spectre-x360.jpeg" alt="HP Spectre x360">
+        <h3>HP Spectre x360</h3>
+        <p><strong>Features:</strong></p>
+        <ul>
+          <li>Intel Core i7 Processor</li>
+          <li>16GB RAM</li>
+          <li>1TB SSD</li>
+          <li>14" 4K Touchscreen</li>
+        </ul>
+        <a href="#" class="details-button">View Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories">
+    <h2>Browse by School</h2>
+
+    <!-- Category Grid -->
+    <div class="category-grid">
+      <!-- Engineering & Architecture -->
+      <div class="category-card" data-category="Engineering">
+        <img src="images/engineering-icon.png" alt="Engineering Icon">
+        <h3>Engineering & Architecture</h3>
+        <p>Laptops for coding, simulations, and more.</p>
+        <a href="engpage.html" class="category-link">View Laptops</a>
+      </div>
+
+      <!-- School of Applied Sciences & Statistics -->
+      <div class="category-card" data-category="Applied Sciences">
+        <img src="images/applied-sciences-icon.png" alt="Applied Sciences Icon">
+        <h3>School of Applied Sciences & Statistics</h3>
+        <p>Laptops for presentations and data analysis.</p>
+        <a href="spas.html" class="category-link">View Laptops</a>
+      </div>
+
+      <!-- Education -->
+      <div class="category-card" data-category="Education">
+        <img src="images/edu.jpeg" alt="Education Icon">
+        <h3>Education</h3>
+        <p>Laptops for simple Computer Operation</p>
+        <a href="edupage.html" class="category-link">View Laptops</a>
+      </div>
+
+      <div class="category-card" data-category="Schoolofcomputing">
+        <img src="images/sci-icon.png" alt="Engineering Icon">
+        <h3>School of Computing & Informatics</h3>
+        <p>Laptops for coding, simulations, and more.</p>
+        <a href="sci.html" class="category-link">View Laptops</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Laptop Details Modal -->
+  <div id="laptop-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <img id="modal-image" src="" alt="Laptop Image">
+      <h2 id="modal-name"></h2>
+      <p id="modal-description"></p>
+      <ul id="modal-features"></ul>
+      <p><strong>Price:</strong> <span id="modal-price"></span></p>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Go to top">↑</button>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Meru Uni. All rights reserved.</p>
+      <ul class="social-links">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="https://www.instagram.com/kingmuli">Instagram</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile menu toggle
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mainNav.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        mainNav.classList.remove('active');
+      }
+    });
+  });
+  
+  // Set active link based on current page
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+// handle mobile menu and active states
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile menu toggle
+  mobileMenuButton.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mainNav.classList.contains('active')) {
+        mobileMenuButton.classList.remove('active');
+        mainNav.classList.remove('active');
+      }
+      
+      // Update active state
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+  
+  // Set initial active link based on current page
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+    // Laptop data
+    const laptops = [
+      {
+        id: 0,
+        name: "Dell XPS 15",
+        category: "Engineering",
+        image: "images/dell-xps-15.jpg",
+        features: {
+          processor: "Intel Core i7",
+          ram: "16GB",
+          storage: "512GB SSD",
+          display: "15.6\" 4K Display",
+        },
+        description: "The Dell XPS 15 is a powerful laptop designed for engineering students, featuring a high-resolution display and robust performance.",
+        price: "kes 194,045",
+      },
+      {
+        id: 1,
+        name: "MacBook Air",
+        category: "Business",
+        image: "images/macbook-air.jpg",
+        features: {
+          processor: "Apple M1 Chip",
+          ram: "8GB",
+          storage: "256GB SSD",
+          display: "13.3\" Retina Display",
+        },
+        description: "The MacBook Air is perfect for business students, offering excellent battery life and a sleek design.",
+        price: "kes 129,320",
+      },
+      {
+        id: 2,
+        name: "HP Spectre x360",
+        category: "Education",
+        image: "images/hp-spectre-x360.jpg",
+        features: {
+          processor: "Intel Core i7",
+          ram: "16GB",
+          storage: "1TB SSD",
+          display: "14\" 4K Touchscreen",
+        },
+        description: "The HP Spectre x360 is ideal for design students, featuring a versatile 2-in-1 design and stunning display.",
+        price: "kes 168,155",
+      },
+    ];
+
+    // Modal functionality
+    const getStartedModal = document.getElementById("get-started-modal");
+    const laptopModal = document.getElementById("laptop-modal");
+    const getStartedButton = document.getElementById("get-started-button");
+    const closeButtons = document.querySelectorAll(".close-modal");
+    const getStartedForm = document.getElementById("get-started-form");
+
+    // Open Get Started modal
+    getStartedButton.addEventListener("click", function(e) {
+      e.preventDefault();
+      getStartedModal.style.display = "block";
+      setTimeout(() => {
+        getStartedModal.style.opacity = 1;
+      }, 10);
+    });
+
+    // Close modals
+    closeButtons.forEach(button => {
+      button.addEventListener("click", function() {
+        const modal = this.closest(".modal");
+        modal.style.opacity = 0;
+        setTimeout(() => {
+          modal.style.display = "none";
+        }, 300);
+      });
+    });
+
+    // Close modals when clicking outside
+    window.addEventListener("click", function(e) {
+      if (e.target.classList.contains("modal")) {
+        e.target.style.opacity = 0;
+        setTimeout(() => {
+          e.target.style.display = "none";
+        }, 300);
+      }
+    });
+
+    // Handle Get Started form submission
+    getStartedForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const school = document.getElementById("school").value;
+      const course = document.getElementById("course").value;
+      
+      // Redirect based on school selection
+      if (school === "Engineering") {
+        window.location.href = "engpage.html";
+      } else if (school === "Applied Sciences") {
+        window.location.href = "spas.html";
+      } else if (school === "Education") {
+        window.location.href = "edupage.html";
+      } else if (school === "Schoolofcomputing") {
+        window.location.href = "sci.html";
+      } else {
+        alert("Please select a valid school and course.");
+      }
+    });
+
+    // Laptop details modal functionality
+    const laptopCards = document.querySelectorAll(".laptop-card");
+    const modalImage = document.getElementById("modal-image");
+    const modalName = document.getElementById("modal-name");
+    const modalDescription = document.getElementById("modal-description");
+    const modalFeatures = document.getElementById("modal-features");
+    const modalPrice = document.getElementById("modal-price");
+
+    laptopCards.forEach(card => {
+      card.addEventListener("click", function(e) {
+        if (e.target.classList.contains("details-button")) {
+          e.preventDefault();
+          const laptopId = this.getAttribute("data-id");
+          const laptop = laptops[laptopId];
+          
+          modalImage.src = this.querySelector("img").src;
+          modalName.textContent = laptop.name;
+          modalDescription.textContent = laptop.description;
+          modalPrice.textContent = laptop.price;
+          
+          // Clear previous features
+          modalFeatures.innerHTML = "";
+          
+          // Add features to the list
+          for (const [key, value] of Object.entries(laptop.features)) {
+            const li = document.createElement("li");
+            li.textContent = `${key}: ${value}`;
+            modalFeatures.appendChild(li);
+          }
+          
+          // Show the modal
+          laptopModal.style.display = "block";
+          setTimeout(() => {
+            laptopModal.style.opacity = 1;
+          }, 10);
+        }
+      });
+    });
+
+    // Filter laptops by category
+    function filterLaptops(category) {
+      const laptopCards = document.querySelectorAll(".laptop-card");
+      laptopCards.forEach(card => {
+        const cardCategory = card.getAttribute("data-category");
+        if (category === "All" || cardCategory === category) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById("back-to-top");
+    
+    window.addEventListener("scroll", function() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    });
+    
+    backToTopButton.addEventListener("click", function() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    // Initialize
+    document.addEventListener("DOMContentLoaded", function() {
+      filterLaptops("All");
+    });
+  </script>
+</body>
+</html>

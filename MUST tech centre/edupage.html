@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUST Tech Center-School of Education</title>
+    <link rel="stylesheet" href="edudesign.css">
+</head>
+<body>
+    <!-- Header -->
+ <header class="glass-header">
+  <div class="header-content">
+    <a href="index.html" class="brand">
+      <span class="brand-main">MUST</span>
+      <span class="brand-sub">Tech Center</span>
+    </a>
+    
+    <nav class="main-nav">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link"><span>Home</span></a></li>
+          <li><a href="Recommendations.html" class="nav-link"><span>Recommendations</span></a></li>
+          <li><a href="reviews.html" class="nav-link"><span>Reviews</span></a></li>
+          <li><a href="comparison.html" class="nav-link"><span>Comparisons</span></a></li>
+          <li><a href="about.html" class="nav-link"><span>About</span></a></li>
+        </ul>
+        <div class="nav-indicator"></div>
+      </div>
+    </nav>
+    
+    <button class="hamburger" aria-label="Menu">
+      <div class="hamburger-inner"></div>
+    </button>
+  </div>
+</header>
+
+    <section class="laptops-section">
+        <h2>Recommended Laptops</h2>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <label for="budget-filter">Filter by Budget:</label>
+            <select id="budget-filter" onchange="filterByBudget(this.value)">
+                <option value="0">All</option>
+                <option value="15000">Under Ksh. 15,000</option>
+                <option value="20000">Under Ksh. 20,000</option>
+                <option value="30000">Under Ksh. 30,000</option>
+            </select>
+        </div>
+
+        <!-- Laptop Grid -->
+        <div class="laptop-grid">
+            <!-- Laptop 1 -->
+            <div class="laptop-card">
+                <img src="images/hp-250-g8.jpeg" alt="HP 250 G8">
+                <h3>HP 250 G8</h3>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Processor: Intel Celeron N4020</li>
+                    <li>RAM: 4GB</li>
+                    <li>Storage: 500GB HDD</li>
+                    <li>OS: Windows 10</li>
+                </ul>
+                <a href="#" class="details-button" onclick="toggleDetails(event)">View Details</a>
+                <div class="laptop-details">
+                    <p><strong>Price:</strong> Ksh. 21,000</p>
+                    <p><strong>Battery Life:</strong> 7 hours</p>
+                    <p><strong>Weight:</strong> 1.8 kg</p>
+                </div>
+            </div>
+
+            <!-- Laptop 2 -->
+            <div class="laptop-card">
+                <img src="images/lenovo-ideapad-3-14.jpeg" alt="Lenovo IdeaPad 3-14">
+                <h3>Lenovo IdeaPad 3-14</h3>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Processor: Intel Celeron N4020</li>
+                    <li>RAM: 4GB</li>
+                    <li>Storage: 1TB HDD</li>
+                    <li>OS: Windows 10</li>
+                </ul>
+                <a href="#" class="details-button" onclick="toggleDetails(event)">View Details</a>
+                <div class="laptop-details">
+                    <p><strong>Price:</strong> Ksh. 15,000</p>
+                    <p><strong>Battery Life:</strong> 6 hours</p>
+                    <p><strong>Weight:</strong> 1.6 kg</p>
+                </div>
+            </div>
+
+            <!-- Laptop 3 -->
+            <div class="laptop-card">
+                <img src="images/dell-inspiron-3552.jpeg" alt="Dell Inspiron 3552">
+                <h3>Dell Inspiron 3552</h3>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Processor: Intel Celeron N4020</li>
+                    <li>RAM: 4GB</li>
+                    <li>Storage: 500GB HDD</li>
+                    <li>OS: Windows 10</li>
+                </ul>
+                <a href="#" class="details-button" onclick="toggleDetails(event)">View Details</a>
+                <div class="laptop-details">
+                    <p><strong>Price:</strong> Ksh. 19,000</p>
+                    <p><strong>Battery Life:</strong> 7 hours</p>
+                    <p><strong>Weight:</strong> 2.2 kg</p>
+                </div>
+            </div>
+
+            <!-- Laptop 4 -->
+            <div class="laptop-card">
+                <img src="images/asus-x543m.jpeg" alt="Asus X543M">
+                <h3>Asus X543M</h3>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Processor: Intel Celeron N4020</li>
+                    <li>RAM: 4GB</li>
+                    <li>Storage: 1TB HDD</li>
+                    <li>OS: Windows 10</li>
+                </ul>
+                <a href="#" class="details-button" onclick="toggleDetails(event)">View Details</a>
+                <div class="laptop-details">
+                    <p><strong>Price:</strong> Ksh. 14,999</p>
+                    <p><strong>Battery Life:</strong> 6 hours</p>
+                    <p><strong>Weight:</strong> 2.1 kg</p>
+                </div>
+            </div>
+
+            <!-- Laptop 5 -->
+            <div class="laptop-card">
+                <img src="images/acer-extensa-15-ex2519.jpeg" alt="Acer Extensa 15 EX2519">
+                <h3>Acer Extensa 15 EX2519</h3>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Processor: Intel Celeron N3060</li>
+                    <li>RAM: 4GB</li>
+                    <li>Storage: 500GB HDD</li>
+                    <li>OS: Windows 10</li>
+                </ul>
+                <a href="#" class="details-button" onclick="toggleDetails(event)">View Details</a>
+                <div class="laptop-details">
+                    <p><strong>Price:</strong> Ksh. 20,000</p>
+                    <p><strong>Battery Life:</strong> 8 hours</p>
+                    <p><strong>Weight:</strong> 2.0 kg</p>
+                </div>
+            </div>
+
+            <!-- Laptop 6 -->
+            <div class="laptop-card">
+                <img src="images/hp-chromebook-x360-11-g3.jpeg" alt="HP Chromebook x360 11 G3">
+                <h3>HP Chromebook x360 11 G3</h3>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Processor: Intel Celeron N4020</li>
+                    <li>RAM: 4GB</li>
+                    <li>Storage: 32GB eMMC</li>
+                    <li>OS: Chrome OS</li>
+                </ul>
+                <a href="#" class="details-button" onclick="toggleDetails(event)">View Details</a>
+                <div class="laptop-details">
+                    <p><strong>Price:</strong> Ksh. 16,500</p>
+                    <p><strong>Battery Life:</strong> 10 hours</p>
+                    <p><strong>Weight:</strong> 1.3 kg</p>
+                </div>
+            </div>
+
+            <!-- Laptop 7 -->
+            <div class="laptop-card">
+                <img src="images/lenovo-v15.jpeg" alt="Lenovo V15">
+                <h3>Lenovo V15</h3>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Processor: Intel Celeron N4020</li>
+                    <li>RAM: 4GB</li>
+                    <li>Storage: 1TB HDD</li>
+                    <li>OS: Windows 10</li>
+                </ul>
+                <a href="#" class="details-button" onclick="toggleDetails(event)">View Details</a>
+                <div class="laptop-details">
+                    <p><strong>Price:</strong> Ksh. 29,999</p>
+                    <p><strong>Battery Life:</strong> 7 hours</p>
+                    <p><strong>Weight:</strong> 1.9 kg</p>
+                </div>
+            </div>
+
+            <!-- Laptop 8 -->
+            <div class="laptop-card">
+                <img src="images/asus-r540s.jpeg" alt="Asus R540S">
+                <h3>Asus R540S</h3>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Processor: Intel Celeron</li>
+                    <li>RAM: 4GB</li>
+                    <li>Storage: 500GB HDD</li>
+                    <li>OS: Windows 10</li>
+                </ul>
+                <a href="#" class="details-button" onclick="toggleDetails(event)">View Details</a>
+                <div class="laptop-details">
+                    <p><strong>Price:</strong> Ksh. 15,500</p>
+                    <p><strong>Battery Life:</strong> 6 hours</p>
+                    <p><strong>Weight:</strong> 2.0 kg</p>
+                </div>
+            </div>
+
+            <!-- Laptop 9 -->
+            <div class="laptop-card">
+                <img src="images/dell-inspiron-11-3162.jpeg" alt="Dell Inspiron 11 3162">
+                <h3>Dell Inspiron 11 3162</h3>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Processor: Intel Celeron</li>
+                    <li>RAM: 2GB</li>
+                    <li>Storage: 32GB SSD</li>
+                    <li>OS: Windows 10</li>
+                </ul>
+                <a href="#" class="details-button" onclick="toggleDetails(event)">View Details</a>
+                <div class="laptop-details">
+                    <p><strong>Price:</strong> Ksh. 14,500</p>
+                    <p><strong>Battery Life:</strong> 9 hours</p>
+                    <p><strong>Weight:</strong> 1.2 kg</p>
+                </div>
+            </div>
+
+            <!-- Laptop 10 -->
+            <div class="laptop-card">
+                <img src="images/hp-250-g7.jpeg" alt="HP 250 G7">
+                <h3>HP 250 G7</h3>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Processor: Intel Celeron N4020</li>
+                    <li>RAM: 4GB</li>
+                    <li>Storage: 500GB HDD</li>
+                    <li>OS: Windows 10</li>
+                </ul>
+                <a href="#" class="details-button" onclick="toggleDetails(event)">View Details</a>
+                <div class="laptop-details">
+                    <p><strong>Price:</strong> Ksh. 21,000</p>
+                    <p><strong>Battery Life:</strong> 6.5 hours</p>
+                    <p><strong>Weight:</strong> 1.8 kg</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="phones-section">
+        <h2>Recommended Phones</h2>
+        <div class="phone-grid">
+            <!-- Phone 1 -->
+            <div class="phone-card">
+                <img src="images/samsung-galaxy-a14.jpeg" alt="Samsung Galaxy A14">
+                <h3>Samsung Galaxy A14</h3>
+                <p><strong>Price:</strong>Ksh. 25,900</p>
+                <p><strong>Features:</strong> 6.5" Display, 4GB RAM, 64GB Storage</p>
+            </div>
+
+            <!-- Phone 2 -->
+            <div class="phone-card">
+                <img src="images/iphone-se.jpeg" alt="iPhone SE">
+                <h3>iPhone SE</h3>
+                <p><strong>Price:</strong> Ksh. 51,800</p>
+                <p><strong>Features:</strong> 4.7" Display, 3GB RAM, 64GB Storage</p>
+            </div>
+
+            <!-- Phone 3 -->
+            <div class="phone-card">
+                <img src="images/google-pixel-6a.jpeg" alt="Google Pixel 6a">
+                <h3>Google Pixel 6a</h3>
+                <p><strong>Price:</strong>Ksh. 45,325</p>
+                <p><strong>Features:</strong> 6.1" Display, 6GB RAM, 128GB Storage</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 School of Education Device Guide. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:mulitonnymulei@gmail.com">info@musttechcenter.com</a></p>
+    </footer>
+
+    <!-- Scroll-to-Top Button -->
+    <button id="scroll-to-top" title="Go to top" aria-label="Scroll to top">↑</button>
+
+    <script>
+
+          document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile menu toggle
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mainNav.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        mainNav.classList.remove('active');
+      }
+    });
+  });
+  
+  // Set active link based on current page
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+// handle mobile menu and active states
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile menu toggle
+  mobileMenuButton.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mainNav.classList.contains('active')) {
+        mobileMenuButton.classList.remove('active');
+        mainNav.classList.remove('active');
+      }
+      
+      // Update active state
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+  
+  // Set initial active link based on current page
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+        // Toggle Details Functionality
+        function toggleDetails(event) {
+            event.preventDefault(); // Prevent the link from navigating
+            const button = event.target;
+            const details = button.nextElementSibling; // Get the next sibling (details section)
+
+            // Toggle visibility
+            if (details.style.display === "block") {
+                details.style.display = "none";
+                button.textContent = "View Details"; // Reset button text
+            } else {
+                details.style.display = "block";
+                button.textContent = "Hide Details"; // Change button text
+            }
+        }
+
+        // Filter Laptops by Budget
+        function filterByBudget(maxBudget) {
+            const laptopCards = document.querySelectorAll('.laptop-card');
+            laptopCards.forEach((card) => {
+                const priceText = card.querySelector('.laptop-details p:first-child').innerText;
+                const price = parseInt(priceText.replace(/[^0-9]/g, '')); // Extract price number
+                if (maxBudget === "0" || price <= maxBudget) {
+                    card.style.display = 'block'; // Show laptop if within budget
+                } else {
+                    card.style.display = 'none'; // Hide laptop if over budget
+                }
+            });
+        }
+
+        // Scroll-to-Top Button
+        const scrollToTopButton = document.getElementById('scroll-to-top');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        };
+
+        scrollToTopButton.addEventListener('click', () => {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        });
+    </script>
+</body>
+</html>

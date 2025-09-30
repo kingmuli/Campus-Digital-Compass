@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Laptops | MUST Tech Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: indianred;
+            --secondary: #4ECDC4;
+            --dark: #292F36;
+            --light: #F7FFF7;
+            --accent: #FFE66D;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF5F5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+     :root {
+  --primary: indianred;
+  --secondary: #4ECDC4;
+  --dark: #292F36;
+  --light: #F7FFF7;
+  --accent: #FFE66D;
+  --transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Glass Header */
+.glass-header {
+  background: rgba(205, 92, 92, 0.9); /* Indian Red with 90% opacity */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(247, 255, 247, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.2rem 0;
+  position: relative;
+}
+
+/* Brand Styles */
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.brand-main {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.brand-sub {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--light);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Navigation Styles */
+.main-nav {
+  position: relative;
+}
+
+.nav-container {
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.nav-link span {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 47, 54, 0.7); /* Dark with opacity */
+  z-index: 1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  border-radius: 6px;
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-link:hover {
+  color: var(--light);
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--secondary);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 100;
+}
+
+.hamburger-inner {
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  position: relative;
+  transition: var(--transition);
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  top: 8px;
+}
+
+.hamburger.active .hamburger-inner {
+  background: transparent;
+}
+
+.hamburger.active .hamburger-inner::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .glass-header {
+    padding: 0 1.5rem;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--dark);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: var(--transition);
+    padding-top: 6rem;
+  }
+  
+  .main-nav.active {
+    transform: translateX(0);
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0 1.5rem;
+  }
+  
+  .nav-link {
+    border-radius: 6px;
+  }
+  
+  .nav-indicator {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Animation for nav indicator */
+.nav-links li:nth-child(1):hover ~ .nav-indicator {
+  transform: translateX(0%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(2):hover ~ .nav-indicator {
+  transform: translateX(100%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(3):hover ~ .nav-indicator {
+  transform: translateX(200%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(4):hover ~ .nav-indicator {
+  transform: translateX(300%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(5):hover ~ .nav-indicator {
+  transform: translateX(400%);
+  width: 20%;
+}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/recommendations-hero.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin: 10px 0 20px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .filter-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .filter-group {
+            margin-bottom: 1rem;
+        }
+        
+        .filter-group h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        select, button {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Laptop Carousel */
+        .laptop-carousel {
+            position: relative;
+            min-height: 500px;
+            margin: 2rem 0;
+        }
+        
+        .laptop-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        
+        .laptop-card.active {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 1;
+        }
+        
+        .laptop-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            height: 280px;
+            object-fit: contain;
+        }
+        
+        .laptop-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .price-tag {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        
+        .spec-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .spec-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .spec-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+
+        /* New Features */
+        .student-badge {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .save-btn {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .save-btn.saved {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Footer - Consistent with other pages */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+            }
+            
+            .laptop-carousel {
+                min-height: 550px;
+            }
+            
+            .laptop-card img {
+                height: 200px;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+            
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+ <header class="glass-header">
+  <div class="header-content">
+    <a href="index.html" class="brand">
+      <span class="brand-main">MUST</span>
+      <span class="brand-sub">Tech Center</span>
+    </a>
+    
+    <nav class="main-nav">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link"><span>Home</span></a></li>
+          <li><a href="Recommendations.html" class="nav-link"><span>Recommendations</span></a></li>
+          <li><a href="reviews.html" class="nav-link"><span>Reviews</span></a></li>
+          <li><a href="comparison.html" class="nav-link"><span>Comparisons</span></a></li>
+          <li><a href="about.html" class="nav-link"><span>About</span></a></li>
+        </ul>
+        <div class="nav-indicator"></div>
+      </div>
+    </nav>
+    
+    <button class="hamburger" aria-label="Menu">
+      <div class="hamburger-inner"></div>
+    </button>
+  </div>
+</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Find Your Perfect Campus Companion</h2>
+        <p>Personalized laptop recommendations based on your academic needs</p>
+    </section>
+
+    <div class="container">
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <h2>Filter Recommendations</h2>
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <h3>School</h3>
+                    <select id="school-filter">
+                        <option value="all">All Schools</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Business">Business</option>
+                        <option value="Computing">Computing</option>
+                        <option value="Sciences">Applied Sciences</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Budget</h3>
+                    <select id="budget-filter">
+                        <option value="all">Any Budget</option>
+                        <option value="50k">Under Ksh 50,000</option>
+                        <option value="100k">Ksh 50,000 - 100,000</option>
+                        <option value="150k">Ksh 100,000 - 150,000</option>
+                        <option value="200k">Over Ksh 150,000</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Primary Use</h3>
+                    <select id="use-filter">
+                        <option value="all">General Use</option>
+                        <option value="coding">Programming</option>
+                        <option value="design">Graphic Design</option>
+                        <option value="research">Data Analysis</option>
+                        <option value="gaming">Gaming</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Apply Filters</h3>
+                    <button id="apply-filters">Update Results</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section">
+            <h2>Recommended Laptops</h2>
+            <p id="results-count">Showing all recommendations</p>
+            
+            <div class="laptop-carousel" id="carousel">
+                <!-- Cards will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="controls">
+                <button id="prevBtn">← Previous</button>
+                <button id="save-btn" class="save-btn">💾 Save This Recommendation</button>
+                <button id="nextBtn">Next →</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer - Matches Other Pages -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 MUST Tech Center. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="https://www.instagram.com/kingmuli">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+          document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile menu toggle
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mainNav.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        mainNav.classList.remove('active');
+      }
+    });
+  });
+  
+  // Set active link based on current page
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+// handle mobile menu and active states
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile menu toggle
+  mobileMenuButton.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mainNav.classList.contains('active')) {
+        mobileMenuButton.classList.remove('active');
+        mainNav.classList.remove('active');
+      }
+      
+      // Update active state
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+  
+  // Set initial active link based on current page
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+        // Enhanced Laptop Data
+        const laptops = [
+            {
+                id: 1,
+                name: "Dell XPS 13",
+                specs: ["Intel Core i7 (13th Gen)", "16GB RAM", "512GB SSD", "13.4\" FHD+ display"],
+                price: 170000,
+                image: "images/dell-xps-13.jpeg",
+                reason: "Powerful processor, compact, long battery life.",
+                school: ["Engineering", "Computing"],
+                budget: "150k",
+                use: ["coding", "research"],
+                discount: true
+            },
+            {
+                id: 2,
+                name: "Apple MacBook Air M2",
+                specs: ["M2 chip", "16GB RAM", "512GB SSD", "13.6\" Retina display"],
+                price: 180000,
+                image: "images/macbook-air-m2.jpeg",
+                reason: "Great for coding and analysis; lightweight for campus.",
+                school: ["Business", "Computing"],
+                budget: "150k",
+                use: ["coding", "design"],
+                discount: true
+            },
+            {
+                id: 3,
+                name: "HP Pavilion Aero 13",
+                specs: ["AMD Ryzen 5", "16GB RAM", "512GB SSD", "13.3\" WUXGA display"],
+                price: 85000,
+                image: "images/hp-pavilion-aero-13.jpeg",
+                reason: "Ultra-light; solid performance; crisp display.",
+                school: ["Business", "Sciences"],
+                budget: "100k",
+                use: ["all"],
+                discount: false
+            },
+            {
+                id: 4,
+                name: "Lenovo ThinkPad X1 Carbon",
+                specs: ["Intel Core i7", "32GB RAM", "1TB SSD", "14\" WUXGA display"],
+                price: 170000,
+                image: "images/thinkpad-x1.jpeg",
+                reason: "High RAM for multitasking; durable for campus.",
+                school: ["Engineering", "Computing"],
+                budget: "150k",
+                use: ["coding", "research"],
+                discount: true
+            },
+            {
+                id: 5,
+                name: "ASUS ZenBook 14 OLED",
+                specs: ["AMD Ryzen 7", "16GB RAM", "512GB SSD", "14\" 2.8K OLED display"],
+                price: 120000,
+                image: "images/asus-zenbook14.jpeg",
+                reason: "Vibrant visuals; lightweight; cost-effective power.",
+                school: ["Business", "Sciences"],
+                budget: "150k",
+                use: ["design"],
+                discount: false
+            }
+        ];
+
+        // DOM Elements
+        const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const saveBtn = document.getElementById('save-btn');
+        const schoolFilter = document.getElementById('school-filter');
+        const budgetFilter = document.getElementById('budget-filter');
+        const useFilter = document.getElementById('use-filter');
+        const applyFiltersBtn = document.getElementById('apply-filters');
+        const resultsCount = document.getElementById('results-count');
+
+        let currentIndex = 0;
+        let filteredLaptops = [...laptops];
+        let autoRotateInterval;
+        let savedLaptops = JSON.parse(localStorage.getItem('savedLaptops')) || [];
+
+        // Create laptop cards
+        function createCards() {
+            carousel.innerHTML = '';
+            filteredLaptops.forEach((laptop, index) => {
+                const isSaved = savedLaptops.includes(laptop.id);
+                const card = document.createElement('div');
+                card.className = `laptop-card ${index === 0 ? 'active' : ''}`;
+                card.innerHTML = `
+                    <img src="${laptop.image}" alt="${laptop.name}">
+                    <h3>${laptop.name} ${laptop.discount ? '<span class="student-badge">10% Student Discount</span>' : ''}</h3>
+                    <ul class="spec-list">
+                        ${laptop.specs.map(spec => `<li>${spec}</li>`).join('')}
+                    </ul>
+                    <div class="price-tag">KES ${laptop.price.toLocaleString()}</div>
+                    <p><strong>Why we recommend it:</strong> ${laptop.reason}</p>
+                `;
+                carousel.appendChild(card);
+            });
+            
+            // Update results count
+            resultsCount.textContent = `Showing ${filteredLaptops.length} of ${laptops.length} recommendations`;
+            
+            // Update save button if first card is saved
+            if (filteredLaptops.length > 0) {
+                const firstLaptopId = filteredLaptops[0].id;
+                saveBtn.classList.toggle('saved', savedLaptops.includes(firstLaptopId));
+            }
+        }
+        
+        // Show specific card
+        function showCard(index) {
+            const cards = document.querySelectorAll('.laptop-card');
+            cards.forEach(card => card.classList.remove('active'));
+            
+            // Handle wrap-around
+            if (index >= filteredLaptops.length) index = 0;
+            if (index < 0) index = filteredLaptops.length - 1;
+            
+            if (cards[index]) {
+                cards[index].classList.add('active');
+                currentIndex = index;
+                
+                // Update save button state
+                const currentLaptopId = filteredLaptops[index].id;
+                saveBtn.classList.toggle('saved', savedLaptops.includes(currentLaptopId));
+            }
+        }
+        
+        // Auto-rotate cards
+        function startAutoRotate() {
+            clearInterval(autoRotateInterval);
+            if (filteredLaptops.length > 1) {
+                autoRotateInterval = setInterval(() => {
+                    showCard(currentIndex + 1);
+                }, 5000); // Change every 5 seconds
+            }
+        }
+        
+        // Filter laptops based on selections
+        function filterLaptops() {
+            const schoolValue = schoolFilter.value;
+            const budgetValue = budgetFilter.value;
+            const useValue = useFilter.value;
+            
+            filteredLaptops = laptops.filter(laptop => {
+                // School filter
+                if (schoolValue !== 'all' && !laptop.school.includes(schoolValue)) {
+                    return false;
+                }
+                
+                // Budget filter
+                if (budgetValue !== 'all') {
+                    if (budgetValue === '50k' && laptop.price >= 50000) return false;
+                    if (budgetValue === '100k' && (laptop.price < 50000 || laptop.price > 100000)) return false;
+                    if (budgetValue === '150k' && (laptop.price < 100000 || laptop.price > 150000)) return false;
+                    if (budgetValue === '200k' && laptop.price <= 150000) return false;
+                }
+                
+                // Use filter
+                if (useValue !== 'all' && !laptop.use.includes(useValue)) {
+                    return false;
+                }
+                
+                return true;
+            });
+            
+            createCards();
+            showCard(0);
+            startAutoRotate();
+        }
+        
+        // Toggle save laptop
+        function toggleSaveLaptop() {
+            if (filteredLaptops.length === 0) return;
+            
+            const currentLaptopId = filteredLaptops[currentIndex].id;
+            const index = savedLaptops.indexOf(currentLaptopId);
+            
+            if (index === -1) {
+                savedLaptops.push(currentLaptopId);
+                saveBtn.classList.add('saved');
+            } else {
+                savedLaptops.splice(index, 1);
+                saveBtn.classList.remove('saved');
+            }
+            
+            localStorage.setItem('savedLaptops', JSON.stringify(savedLaptops));
+        }
+
+        // Event listeners
+        prevBtn.addEventListener('click', () => {
+            showCard(currentIndex - 1);
+            startAutoRotate();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            showCard(currentIndex + 1);
+            startAutoRotate();
+        });
+        
+        saveBtn.addEventListener('click', toggleSaveLaptop);
+        
+        applyFiltersBtn.addEventListener('click', filterLaptops);
+
+        // Initialize
+        createCards();
+        startAutoRotate();
+    </script>
+</body>
+</html>

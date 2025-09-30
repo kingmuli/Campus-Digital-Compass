@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compare laptops side by side to find the perfect one for your needs at MUST Tech Center.">
+  <meta name="keywords" content="laptop comparison, tech specs, student laptops, performance comparison">
+  <meta name="author" content="MUST Tech Center">
+  <title>Laptop Comparisons | MUST TECH CENTER</title>
+  <style>
+    /* Inherit all existing styles from main page */
+    :root {
+      --primary: indianred;
+      --secondary: #4ECDC4;
+      --dark: #292F36;
+      --light: #F7FFF7;
+      --accent: #FFE66D;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFF5F5;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+   :root {
+  --primary: indianred;
+  --secondary: #4ECDC4;
+  --dark: #292F36;
+  --light: #F7FFF7;
+  --accent: #FFE66D;
+  --transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Modern Glass Header - Updated Background */
+.glass-header {
+  background: rgba(205, 92, 92, 0.9); /* Indian Red with 90% opacity */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(247, 255, 247, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.2rem 0;
+  position: relative;
+}
+
+/* Brand Styles */
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.brand-main {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.brand-sub {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--light);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Navigation Styles */
+.main-nav {
+  position: relative;
+}
+
+.nav-container {
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.nav-link span {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 47, 54, 0.7); /* Dark with opacity */
+  z-index: 1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  border-radius: 6px;
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-link:hover {
+  color: var(--light);
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--secondary);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 100;
+}
+
+.hamburger-inner {
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  position: relative;
+  transition: var(--transition);
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  top: 8px;
+}
+
+.hamburger.active .hamburger-inner {
+  background: transparent;
+}
+
+.hamburger.active .hamburger-inner::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .glass-header {
+    padding: 0 1.5rem;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--dark);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: var(--transition);
+    padding-top: 6rem;
+  }
+  
+  .main-nav.active {
+    transform: translateX(0);
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0 1.5rem;
+  }
+  
+  .nav-link {
+    border-radius: 6px;
+  }
+  
+  .nav-indicator {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Animation for nav indicator */
+.nav-links li:nth-child(1):hover ~ .nav-indicator {
+  transform: translateX(0%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(2):hover ~ .nav-indicator {
+  transform: translateX(100%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(3):hover ~ .nav-indicator {
+  transform: translateX(200%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(4):hover ~ .nav-indicator {
+  transform: translateX(300%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(5):hover ~ .nav-indicator {
+  transform: translateX(400%);
+  width: 20%;
+}
+    /* Comparison Page Specific Styles */
+    .comparison-hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/compare-hero.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    
+    .comparison-hero h2 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    
+    .comparison-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    .comparison-intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .comparison-intro p {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Comparison Tool */
+    .comparison-tool {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      overflow-x: auto;
+    }
+    
+    .comparison-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    .comparison-header h2 {
+      color: var(--primary);
+      margin: 0;
+    }
+    
+    .add-laptop-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    
+    .add-laptop-btn:hover {
+      background-color: var(--accent);
+      color: var(--dark);
+    }
+    
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 200px repeat(4, 300px);
+      gap: 15px;
+      width: 100%;
+      min-width: 800px;
+    }
+    
+    .spec-category {
+      font-weight: bold;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+      position: sticky;
+      left: 0;
+      z-index: 1;
+    }
+    
+    .laptop-card-compare {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      position: relative;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .laptop-card-compare img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+    
+    .laptop-card-compare h3 {
+      color: var(--primary);
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+    
+    .remove-laptop {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    
+    .spec-value {
+      padding: 10px;
+      margin: 0;
+      word-break: break-word;
+    }
+    
+    .highlight {
+      background-color: rgba(255, 230, 109, 0.3);
+      font-weight: bold;
+    }
+    
+    /* Comparison Tables */
+    .comparison-tables {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .comparison-table {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+    
+    .comparison-table h3 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+    
+    .comparison-table table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+    
+    .comparison-table th {
+      text-align: left;
+      padding: 12px 15px;
+      background-color: #f9f9f9;
+      font-weight: bold;
+    }
+    
+    .comparison-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+    
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .winner {
+      color: var(--primary);
+      font-weight: bold;
+      position: relative;
+    }
+    
+    .winner::after {
+      content: "✓";
+      margin-left: 5px;
+    }
+
+    /* Laptop Selector Modal */
+    .laptop-selector-modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .laptop-selector-content {
+      background-color: white;
+      margin: 5% auto;
+      padding: 30px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      position: relative;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    
+    .laptop-selector-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .laptop-selector-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    
+    .laptop-selector-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .laptop-selector-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    
+    .laptop-selector-card h4 {
+      margin: 0;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    /* Footer*/
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .social-links {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+    
+      header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+      }
+      
+      .comparison-hero h2 {
+        font-size: 2rem;
+      }
+      
+      .comparison-grid {
+        grid-template-columns: 150px repeat(4, 250px);
+      }
+      
+      .laptop-selector-content {
+        width: 90%;
+        margin: 20% auto;
+      }
+      
+      .comparison-tables {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+ <!-- Header -->
+ <header class="glass-header">
+  <div class="header-content">
+    <a href="index.html" class="brand">
+      <span class="brand-main">MUST</span>
+      <span class="brand-sub">Tech Center</span>
+    </a>
+    
+    <nav class="main-nav">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link"><span>Home</span></a></li>
+          <li><a href="Recommendations.html" class="nav-link"><span>Recommendations</span></a></li>
+          <li><a href="reviews.html" class="nav-link"><span>Reviews</span></a></li>
+          <li><a href="comparison.html" class="nav-link"><span>Comparisons</span></a></li>
+          <li><a href="about.html" class="nav-link"><span>About</span></a></li>
+        </ul>
+        <div class="nav-indicator"></div>
+      </div>
+    </nav>
+    
+    <button class="hamburger" aria-label="Menu">
+      <div class="hamburger-inner"></div>
+    </button>
+  </div>
+</header>
+
+  <!-- Comparison Hero Section -->
+  <section class="comparison-hero">
+    <div class="hero-content">
+      <h2>Laptop Comparison Tool</h2>
+      <p>Compare up to 4 laptops side by side to find the perfect one for your needs</p>
+    </div>
+  </section>
+
+  <!-- Comparison Container -->
+  <div class="comparison-container">
+    <div class="comparison-intro">
+      <h2>Make an Informed Decision</h2>
+      <p>Our comparison tool helps you evaluate laptops based on specifications, performance, and value for money. Select laptops to compare and see how they stack up against each other.</p>
+    </div>
+    
+    <!-- Comparison Tool -->
+    <div class="comparison-tool">
+      <div class="comparison-header">
+        <h2>Compare Laptops</h2>
+        <button class="add-laptop-btn" id="add-laptop-btn">+ Add Laptop</button>
+      </div>
+      
+      <div class="comparison-grid" id="comparison-grid">
+        <!-- Spec categories will be populated by JavaScript -->
+      </div>
+    </div>
+    
+    <!-- Comparison Tables -->
+    <div class="comparison-tables">
+      <div class="comparison-table">
+        <h3>Performance Comparison</h3>
+        <table id="performance-table">
+          <thead>
+            <tr>
+              <th>Specification</th>
+              <th>Laptop 1</th>
+              <th>Laptop 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Will be populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="comparison-table">
+        <h3>Value for Money</h3>
+        <table id="value-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Laptop 1</th>
+              <th>Laptop 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Will be populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Laptop Selector Modal -->
+  <div id="laptop-selector-modal" class="laptop-selector-modal">
+    <div class="laptop-selector-content">
+      <span class="close-modal">&times;</span>
+      <h2>Select Laptops to Compare</h2>
+      <p>Choose up to 4 laptops to compare side by side</p>
+      
+      <div class="filter-buttons">
+        <button onclick="filterSelector('All')" aria-label="Show All Laptops">All</button>
+        <button onclick="filterSelector('Engineering')" aria-label="Filter Engineering Laptops">Engineering</button>
+        <button onclick="filterSelector('Business')" aria-label="Filter Business Laptops">Business</button>
+        <button onclick="filterSelector('Education')" aria-label="Filter Design Laptops">Education</button>
+      </div>
+      
+      <div class="laptop-selector-grid" id="laptop-selector-grid">
+        <!-- Will be populated by JavaScript -->
+      </div>
+      
+      <div class="selected-laptops" id="selected-laptops">
+        <h3>Selected for Comparison (0/4)</h3>
+        <div class="selected-list" id="selected-list"></div>
+        <button id="confirm-selection" class="add-laptop-btn">Compare Selected</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Meru Uni. All rights reserved.</p>
+      <ul class="social-links">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="https://www.instagram.com/kingmuli">Instagram</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile menu toggle
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mainNav.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        mainNav.classList.remove('active');
+      }
+    });
+  });
+  
+  // Set active link based on current page
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+// handle mobile menu and active states
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile menu toggle
+  mobileMenuButton.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mainNav.classList.contains('active')) {
+        mobileMenuButton.classList.remove('active');
+        mainNav.classList.remove('active');
+      }
+      
+      // Update active state
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+  
+  // Set initial active link based on current page
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+    // Extended laptop data with more details for comparison
+    const laptops = [
+      {
+        id: 0,
+        name: "Dell XPS 15",
+        category: "Engineering",
+        image: "images/dell-xps-15.jpeg",
+        price: "Ksh 194,045",
+        priceValue: 194045,
+        specs: {
+          processor: "Intel Core i7-11800H",
+          ram: "16GB DDR4",
+          storage: "512GB NVMe SSD",
+          display: "15.6\" 4K UHD (3840 x 2160)",
+          graphics: "NVIDIA GeForce RTX 3050 Ti 4GB",
+          battery: "86Wh (Up to 8 hours)",
+          weight: "1.8 kg",
+          os: "Windows 11 Pro",
+          ports: "2x Thunderbolt 4, 1x USB-C, SD card reader, 3.5mm audio"
+        },
+        performance: {
+          cpu: "9.5/10",
+          gpu: "8/10",
+          multitasking: "9/10",
+          display: "10/10",
+          singleCore: 1250,
+          multiCore: 5800
+        },
+        value: {
+          build: "9/10",
+          performance: "9/10",
+          battery: "7/10",
+          price: "7/10"
+        },
+        description: "Powerful laptop for engineering students with excellent display and performance for CAD, programming, and simulations.",
+        discount: true
+      },
+      {
+        id: 1,
+        name: "MacBook Air M2",
+        category: "Business",
+        image: "images/macbook-air.jpeg",
+        price: "Ksh 129,320",
+        priceValue: 129320,
+        specs: {
+          processor: "Apple M2 chip",
+          ram: "8GB unified memory",
+          storage: "256GB SSD",
+          display: "13.6\" Liquid Retina (2560 x 1664)",
+          graphics: "Integrated 8-core GPU",
+          battery: "52.6Wh (Up to 18 hours)",
+          weight: "1.24 kg",
+          os: "macOS Ventura",
+          ports: "2x Thunderbolt / USB 4, MagSafe, 3.5mm audio"
+        },
+        performance: {
+          cpu: "9/10",
+          gpu: "7/10",
+          multitasking: "8/10",
+          display: "9/10",
+          singleCore: 1350,
+          multiCore: 5200
+        },
+        value: {
+          build: "10/10",
+          performance: "8/10",
+          battery: "10/10",
+          price: "8/10"
+        },
+        description: "Ultra-portable laptop with incredible battery life, perfect for business students and everyday productivity.",
+        discount: true
+      },
+      {
+        id: 2,
+        name: "HP Spectre x360",
+        category: "Education",
+        image: "images/hp-spectre-x360.jpeg",
+        price: "Ksh 168,155",
+        priceValue: 168155,
+        specs: {
+          processor: "Intel Core i7-1260P",
+          ram: "16GB LPDDR4",
+          storage: "1TB PCIe NVMe SSD",
+          display: "14\" 3K2K OLED (3000 x 2000) Touch",
+          graphics: "Intel Iris Xe",
+          battery: "66Wh (Up to 12 hours)",
+          weight: "1.36 kg",
+          os: "Windows 11 Home",
+          ports: "2x Thunderbolt 4, 1x USB-A, microSD, 3.5mm audio"
+        },
+        performance: {
+          cpu: "8.5/10",
+          gpu: "6/10",
+          multitasking: "8/10",
+          display: "9.5/10",
+          singleCore: 1150,
+          multiCore: 5400
+        },
+        value: {
+          build: "9/10",
+          performance: "8/10",
+          battery: "8/10",
+          price: "8/10"
+        },
+        description: "Versatile 2-in-1 convertible laptop with stunning OLED display, ideal for note-taking and media consumption.",
+        discount: false
+      },
+      {
+        id: 3,
+        name: "Lenovo ThinkPad P1",
+        category: "Engineering",
+        image: "images/thinkpad-p1.jpeg",
+        price: "Ksh 245,999",
+        priceValue: 245999,
+        specs: {
+          processor: "Intel Core i9-12900H",
+          ram: "32GB DDR5",
+          storage: "1TB NVMe SSD",
+          display: "16\" WQXGA (2560 x 1600)",
+          graphics: "NVIDIA RTX A2000 8GB",
+          battery: "90Wh (Up to 7 hours)",
+          weight: "1.81 kg",
+          os: "Windows 11 Pro",
+          ports: "2x Thunderbolt 4, 2x USB-C, HDMI 2.1, SD card reader, 3.5mm audio"
+        },
+        performance: {
+          cpu: "10/10",
+          gpu: "9/10",
+          multitasking: "10/10",
+          display: "9/10",
+          singleCore: 1450,
+          multiCore: 6200
+        },
+        value: {
+          build: "10/10",
+          performance: "10/10",
+          battery: "6/10",
+          price: "6/10"
+        },
+        description: "Workstation-grade laptop for demanding engineering applications with professional GPU and color-accurate display.",
+        discount: true
+      },
+      {
+        id: 4,
+        name: "ASUS ZenBook 14",
+        category: "Business",
+        image: "images/asuszenbook.jpeg",
+        price: "Ksh 112,500",
+        priceValue: 112500,
+        specs: {
+          processor: "AMD Ryzen 7 5800H",
+          ram: "16GB LPDDR4X",
+          storage: "512GB NVMe SSD",
+          display: "14\" FHD (1920 x 1080) OLED",
+          graphics: "AMD Radeon Graphics",
+          battery: "63Wh (Up to 10 hours)",
+          weight: "1.39 kg",
+          os: "Windows 11 Home",
+          ports: "2x USB-C, 1x USB-A, HDMI, microSD, 3.5mm audio"
+        },
+        performance: {
+          cpu: "8/10",
+          gpu: "6/10",
+          multitasking: "8/10",
+          display: "9/10",
+          singleCore: 1050,
+          multiCore: 4900
+        },
+        value: {
+          build: "8/10",
+          performance: "8/10",
+          battery: "8/10",
+          price: "9/10"
+        },
+        description: "Affordable business laptop with excellent AMD performance and vibrant OLED display.",
+        discount: false
+      },
+      {
+        id: 5,
+        name: "Microsoft Surface Laptop 5",
+        category: "Education",
+        image: "images/microsoftsurface-5.jpeg",
+        price: "Ksh 145,000",
+        priceValue: 145000,
+        specs: {
+          processor: "Intel Core i7-1255U",
+          ram: "16GB LPDDR5",
+          storage: "512GB NVMe SSD",
+          display: "13.5\" PixelSense (2256 x 1504) Touch",
+          graphics: "Intel Iris Xe",
+          battery: "47.4Wh (Up to 11 hours)",
+          weight: "1.27 kg",
+          os: "Windows 11 Home",
+          ports: "1x USB-C, 1x USB-A, Surface Connect, 3.5mm audio"
+        },
+        performance: {
+          cpu: "8/10",
+          gpu: "6/10",
+          multitasking: "8/10",
+          display: "9/10",
+          singleCore: 1100,
+          multiCore: 5100
+        },
+        value: {
+          build: "9/10",
+          performance: "7/10",
+          battery: "8/10",
+          price: "7/10"
+        },
+        description: "Premium build quality with excellent touchscreen for students who prefer Windows ecosystem.",
+        discount: true
+      }
+    ];
+
+    // DOM Elements
+    const addLaptopBtn = document.getElementById('add-laptop-btn');
+    const comparisonGrid = document.getElementById('comparison-grid');
+    const laptopSelectorModal = document.getElementById('laptop-selector-modal');
+    const laptopSelectorGrid = document.getElementById('laptop-selector-grid');
+    const selectedList = document.getElementById('selected-list');
+    const confirmSelectionBtn = document.getElementById('confirm-selection');
+    const performanceTable = document.getElementById('performance-table').querySelector('tbody');
+    const valueTable = document.getElementById('value-table').querySelector('tbody');
+    const closeModalBtn = document.querySelector('.laptop-selector-content .close-modal');
+
+    // State
+    let selectedLaptops = [];
+    let currentFilter = 'All';
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize empty comparison grid
+      updateComparisonGrid();
+      
+      // Populate laptop selector grid
+      populateLaptopSelectorGrid();
+      
+      // Set up event listeners
+      addLaptopBtn.addEventListener('click', openLaptopSelector);
+      confirmSelectionBtn.addEventListener('click', confirmSelection);
+      closeModalBtn.addEventListener('click', closeModal);
+      
+      // Close modal when clicking outside
+      window.addEventListener('click', function(e) {
+        if (e.target === laptopSelectorModal) {
+          closeModal();
+        }
+      });
+    });
+
+    // Modal functionality
+    function openLaptopSelector() {
+      laptopSelectorModal.style.display = 'block';
+      setTimeout(() => {
+        laptopSelectorModal.style.opacity = 1;
+      }, 10);
+    }
+
+    function closeModal() {
+      laptopSelectorModal.style.opacity = 0;
+      setTimeout(() => {
+        laptopSelectorModal.style.display = 'none';
+      }, 300);
+    }
+
+    // Populate laptop selector grid
+    function populateLaptopSelectorGrid() {
+      laptopSelectorGrid.innerHTML = '';
+      
+      laptops.forEach(laptop => {
+        if (currentFilter === 'All' || laptop.category === currentFilter) {
+          const isSelected = selectedLaptops.includes(laptop.id);
+          
+          const card = document.createElement('div');
+          card.className = `laptop-selector-card ${isSelected ? 'selected' : ''}`;
+          card.dataset.id = laptop.id;
+          card.innerHTML = `
+            <img src="${laptop.image}" alt="${laptop.name}">
+            <h4>${laptop.name}</h4>
+            <p>${laptop.price}</p>
+          `;
+          
+          card.addEventListener('click', function() {
+            toggleLaptopSelection(laptop.id);
+          });
+          
+          laptopSelectorGrid.appendChild(card);
+        }
+      });
+      
+      updateSelectedList();
+    }
+
+    // Filter laptop selector
+    function filterSelector(category) {
+      currentFilter = category;
+      populateLaptopSelectorGrid();
+    }
+
+    // Toggle laptop selection
+    function toggleLaptopSelection(id) {
+      const index = selectedLaptops.indexOf(id);
+      
+      if (index === -1) {
+        // Add to selection if not already selected and we have less than 4
+        if (selectedLaptops.length < 4) {
+          selectedLaptops.push(id);
+        }
+      } else {
+        // Remove from selection
+        selectedLaptops.splice(index, 1);
+      }
+      
+      // Update UI
+      populateLaptopSelectorGrid();
+    }
+
+    // Update selected list display
+    function updateSelectedList() {
+      selectedList.innerHTML = '';
+      
+      if (selectedLaptops.length === 0) {
+        selectedList.innerHTML = '<p>No laptops selected</p>';
+      } else {
+        selectedLaptops.forEach(id => {
+          const laptop = laptops.find(l => l.id === id);
+          const item = document.createElement('div');
+          item.className = 'selected-item';
+          item.innerHTML = `
+            <img src="${laptop.image}" alt="${laptop.name}" width="40">
+            <span>${laptop.name}</span>
+            <button class="remove-selected" data-id="${laptop.id}">×</button>
+          `;
+          selectedList.appendChild(item);
+        });
+        
+        // Add event listeners to remove buttons
+        document.querySelectorAll('.remove-selected').forEach(btn => {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleLaptopSelection(parseInt(this.dataset.id));
+          });
+        });
+      }
+      
+      // Update count
+      document.querySelector('#selected-laptops h3').textContent = 
+        `Selected for Comparison (${selectedLaptops.length}/4)`;
+    }
+
+    // Confirm selection and update comparison
+    function confirmSelection() {
+      if (selectedLaptops.length < 2) {
+        alert('Please select at least 2 laptops to compare');
+        return;
+      }
+      
+      updateComparisonGrid();
+      updateComparisonTables();
+      closeModal();
+    }
+
+    // Update the main comparison grid
+    function updateComparisonGrid() {
+      comparisonGrid.innerHTML = '';
+      
+      // Add specification categories
+      const specCategories = [
+        'Image', 'Name', 'Price', 'Processor', 'RAM', 'Storage', 'Display', 
+        'Graphics', 'Battery', 'Weight', 'OS', 'Ports', 'Description'
+      ];
+      
+      specCategories.forEach(category => {
+        const specDiv = document.createElement('div');
+        specDiv.className = 'spec-category';
+        specDiv.textContent = category;
+        comparisonGrid.appendChild(specDiv);
+      });
+      
+      // Add laptop columns
+      selectedLaptops.forEach(id => {
+        const laptop = laptops.find(l => l.id === id);
+        
+        // Image
+        const imgDiv = document.createElement('div');
+        imgDiv.className = 'laptop-card-compare';
+        imgDiv.innerHTML = `<img src="${laptop.image}" alt="${laptop.name}">`;
+        comparisonGrid.appendChild(imgDiv);
+        
+        // Name
+        const nameDiv = document.createElement('div');
+        nameDiv.className = 'laptop-card-compare';
+        nameDiv.innerHTML = `<h3>${laptop.name}</h3>`;
+        comparisonGrid.appendChild(nameDiv);
+        
+        // Price
+        const priceDiv = document.createElement('div');
+        priceDiv.className = 'laptop-card-compare';
+        priceDiv.innerHTML = `<p class="spec-value">${laptop.price}</p>`;
+        comparisonGrid.appendChild(priceDiv);
+        
+        // Processor
+        const cpuDiv = document.createElement('div');
+        cpuDiv.className = 'laptop-card-compare';
+        cpuDiv.innerHTML = `<p class="spec-value">${laptop.specs.processor}</p>`;
+        comparisonGrid.appendChild(cpuDiv);
+        
+        // RAM
+        const ramDiv = document.createElement('div');
+        ramDiv.className = 'laptop-card-compare';
+        ramDiv.innerHTML = `<p class="spec-value">${laptop.specs.ram}</p>`;
+        comparisonGrid.appendChild(ramDiv);
+        
+        // Storage
+        const storageDiv = document.createElement('div');
+        storageDiv.className = 'laptop-card-compare';
+        storageDiv.innerHTML = `<p class="spec-value">${laptop.specs.storage}</p>`;
+        comparisonGrid.appendChild(storageDiv);
+        
+        // Display
+        const displayDiv = document.createElement('div');
+        displayDiv.className = 'laptop-card-compare';
+        displayDiv.innerHTML = `<p class="spec-value">${laptop.specs.display}</p>`;
+        comparisonGrid.appendChild(displayDiv);
+        
+        // Graphics
+        const gpuDiv = document.createElement('div');
+        gpuDiv.className = 'laptop-card-compare';
+        gpuDiv.innerHTML = `<p class="spec-value">${laptop.specs.graphics}</p>`;
+        comparisonGrid.appendChild(gpuDiv);
+        
+        // Battery
+        const batteryDiv = document.createElement('div');
+        batteryDiv.className = 'laptop-card-compare';
+        batteryDiv.innerHTML = `<p class="spec-value">${laptop.specs.battery}</p>`;
+        comparisonGrid.appendChild(batteryDiv);
+        
+        // Weight
+        const weightDiv = document.createElement('div');
+        weightDiv.className = 'laptop-card-compare';
+        weightDiv.innerHTML = `<p class="spec-value">${laptop.specs.weight}</p>`;
+        comparisonGrid.appendChild(weightDiv);
+        
+        // OS
+        const osDiv = document.createElement('div');
+        osDiv.className = 'laptop-card-compare';
+        osDiv.innerHTML = `<p class="spec-value">${laptop.specs.os}</p>`;
+        comparisonGrid.appendChild(osDiv);
+        
+        // Ports
+        const portsDiv = document.createElement('div');
+        portsDiv.className = 'laptop-card-compare';
+        portsDiv.innerHTML = `<p class="spec-value">${laptop.specs.ports}</p>`;
+        comparisonGrid.appendChild(portsDiv);
+        
+        // Description
+        const descDiv = document.createElement('div');
+        descDiv.className = 'laptop-card-compare';
+        descDiv.innerHTML = `<p class="spec-value">${laptop.description}</p>`;
+        comparisonGrid.appendChild(descDiv);
+      });
+      
+      // Highlight best specs
+      if (selectedLaptops.length > 1) {
+        highlightBestSpecs();
+      }
+    }
+
+    // Highlight the best specs in each category
+    function highlightBestSpecs() {
+      const categories = ['Processor', 'RAM', 'Storage', 'Display', 'Graphics', 'Battery', 'Weight'];
+      const laptopIds = selectedLaptops;
+      
+      categories.forEach(category => {
+        // Get all spec values for this category
+        const values = laptopIds.map(id => {
+          const laptop = laptops.find(l => l.id === id);
+          return {
+            id: id,
+            value: laptop.specs[category.toLowerCase()]
+          };
+        });
+        
+        // Determine which is best (this is simplified - would need more complex logic for real comparison)
+        // For demo, we'll just highlight the first one
+        const bestId = values[0].id;
+        
+        // Find the corresponding div and highlight it
+        const index = laptopIds.indexOf(bestId);
+        const gridIndex = 3 + categories.indexOf(category); // 3 is the offset after image, name, price
+        const divIndex = gridIndex * (laptopIds.length + 1) + index + 1;
+        
+        if (comparisonGrid.children[divIndex]) {
+          comparisonGrid.children[divIndex].classList.add('highlight');
+        }
+      });
+    }
+
+    // Update the comparison tables
+    function updateComparisonTables() {
+      performanceTable.innerHTML = '';
+      valueTable.innerHTML = '';
+      
+      const laptop1 = laptops.find(l => l.id === selectedLaptops[0]);
+      const laptop2 = laptops.find(l => l.id === selectedLaptops[1]);
+      
+      // Performance table
+      for (const [key, value] of Object.entries(laptop1.performance)) {
+        const row = document.createElement('tr');
+        
+        const cell1 = document.createElement('td');
+        cell1.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+        row.appendChild(cell1);
+        
+        const cell2 = document.createElement('td');
+        cell2.textContent = value;
+        if (parseFloat(value) > parseFloat(laptop2.performance[key])) {
+          cell2.classList.add('winner');
+        }
+        row.appendChild(cell2);
+        
+        const cell3 = document.createElement('td');
+        cell3.textContent = laptop2.performance[key];
+        if (parseFloat(laptop2.performance[key]) > parseFloat(value)) {
+          cell3.classList.add('winner');
+        }
+        row.appendChild(cell3);
+        
+        performanceTable.appendChild(row);
+      }
+      
+      // Value table
+      for (const [key, value] of Object.entries(laptop1.value)) {
+        const row = document.createElement('tr');
+        
+        const cell1 = document.createElement('td');
+        cell1.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+        row.appendChild(cell1);
+        
+        const cell2 = document.createElement('td');
+        cell2.textContent = value;
+        if (parseFloat(value) > parseFloat(laptop2.value[key])) {
+          cell2.classList.add('winner');
+        }
+        row.appendChild(cell2);
+        
+        const cell3 = document.createElement('td');
+        cell3.textContent = laptop2.value[key];
+        if (parseFloat(laptop2.value[key]) > parseFloat(value)) {
+          cell3.classList.add('winner');
+        }
+        row.appendChild(cell3);
+        
+        valueTable.appendChild(row);
+      }
+    }
+  </script>
+</body>
+</html>

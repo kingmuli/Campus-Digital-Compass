@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MUST TECH CENTER-REVIEWS</title>
+  <style>
+    /* General Styles */
+    :root {
+      --primary: indianred;
+      --secondary: #4ECDC4;
+      --dark: #292F36;
+      --light: #F7FFF7;
+      --accent: #FFE66D;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFF5F5;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    :root {
+  --primary: indianred;
+  --secondary: #4ECDC4;
+  --dark: #292F36;
+  --light: #F7FFF7;
+  --accent: #FFE66D;
+  --transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Modern Glass Header - Updated Background */
+.glass-header {
+  background: rgba(205, 92, 92, 0.9); /* Indian Red with 90% opacity */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(247, 255, 247, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.2rem 0;
+  position: relative;
+}
+
+/* Brand Styles */
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.brand-main {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.brand-sub {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--light);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Navigation Styles */
+.main-nav {
+  position: relative;
+}
+
+.nav-container {
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.nav-link span {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 47, 54, 0.7); /* Dark with opacity */
+  z-index: 1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  border-radius: 6px;
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-link:hover {
+  color: var(--light);
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--secondary);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 100;
+}
+
+.hamburger-inner {
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  position: relative;
+  transition: var(--transition);
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  top: 8px;
+}
+
+.hamburger.active .hamburger-inner {
+  background: transparent;
+}
+
+.hamburger.active .hamburger-inner::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .glass-header {
+    padding: 0 1.5rem;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--dark);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: var(--transition);
+    padding-top: 6rem;
+  }
+  
+  .main-nav.active {
+    transform: translateX(0);
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0 1.5rem;
+  }
+  
+  .nav-link {
+    border-radius: 6px;
+  }
+  
+  .nav-indicator {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Animation for nav indicator */
+.nav-links li:nth-child(1):hover ~ .nav-indicator {
+  transform: translateX(0%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(2):hover ~ .nav-indicator {
+  transform: translateX(100%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(3):hover ~ .nav-indicator {
+  transform: translateX(200%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(4):hover ~ .nav-indicator {
+  transform: translateX(300%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(5):hover ~ .nav-indicator {
+  transform: translateX(400%);
+  width: 20%;
+}
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/reviews-hero.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    
+    .hero h2 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin: 10px 0 20px;
+    }
+
+    /* Review Filter */
+    .review-filter {
+      padding: 20px;
+      background-color: white;
+      text-align: center;
+    }
+    
+    .filter-controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-controls select,
+    .filter-controls input {
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+      font-size: 1rem;
+      min-width: 200px;
+    }
+
+    /* Reviews Container */
+    .reviews-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    /* Review Card */
+    .review-card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .review-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    
+    .review-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .review-laptop {
+      font-weight: bold;
+      color: var(--primary);
+      margin: 0;
+    }
+    
+    .reviewer-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .reviewer-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+    
+    .reviewer-name {
+      font-weight: bold;
+      margin: 0;
+    }
+    
+    .reviewer-course {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0;
+    }
+    
+    .rating {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+    
+    .review-text {
+      margin: 15px 0;
+      line-height: 1.6;
+    }
+    
+    .review-date {
+      font-size: 0.8rem;
+      color: #888;
+      text-align: right;
+    }
+    
+    .pros-cons {
+      margin: 15px 0;
+    }
+    
+    .pros-cons h4 {
+      margin: 10px 0 5px;
+      color: var(--primary);
+    }
+    
+    .pros-cons ul {
+      padding-left: 20px;
+      margin: 5px 0;
+    }
+    
+    .pros-cons li {
+      margin: 5px 0;
+    }
+
+    /* Review Form */
+    .review-form {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .review-form h3 {
+      color: var(--primary);
+      margin-top: 0;
+      text-align: center;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    
+    .form-group textarea {
+      min-height: 120px;
+    }
+    
+    .rating-input {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    .rating-input select {
+      flex: 1;
+    }
+    
+    .submit-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 20px auto 0;
+    }
+    
+    .submit-btn:hover {
+      background-color: var(--accent);
+      color: var(--dark);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .social-links {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      z-index: 99;
+    }
+    
+    #back-to-top:hover {
+      background-color: var(--accent);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+    
+      header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+      }
+    
+      .filter-controls {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .filter-controls select,
+      .filter-controls input {
+        width: 100%;
+      }
+      
+      .review-form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+ <!-- Header -->
+ <header class="glass-header">
+  <div class="header-content">
+    <a href="index.html" class="brand">
+      <span class="brand-main">MUST</span>
+      <span class="brand-sub">Tech Center</span>
+    </a>
+    
+    <nav class="main-nav">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link"><span>Home</span></a></li>
+          <li><a href="Recommendations.html" class="nav-link"><span>Recommendations</span></a></li>
+          <li><a href="reviews.html" class="nav-link"><span>Reviews</span></a></li>
+          <li><a href="comparison.html" class="nav-link"><span>Comparisons</span></a></li>
+          <li><a href="about.html" class="nav-link"><span>About</span></a></li>
+        </ul>
+        <div class="nav-indicator"></div>
+      </div>
+    </nav>
+    
+    <button class="hamburger" aria-label="Menu">
+      <div class="hamburger-inner"></div>
+    </button>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Laptop Reviews from Students</h2>
+    <p>Read honest reviews from fellow students about their laptop experiences</p>
+  </section>
+
+  <!-- Review Filter -->
+  <section class="review-filter">
+    <div class="filter-controls">
+      <select id="laptopFilter">
+        <option value="">All Laptops</option>
+        <option value="Dell XPS 13">Dell XPS 13</option>
+        <option value="MacBook Air M2">MacBook Air M2</option>
+        <option value="Lenovo ThinkPad">Lenovo ThinkPad</option>
+        <option value="HP Spectre">HP Spectre</option>
+        <option value="ASUS ZenBook">ASUS ZenBook</option>
+      </select>
+      <select id="ratingFilter">
+        <option value="">All Ratings</option>
+        <option value="5">★★★★★</option>
+        <option value="4">★★★★☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="1">★☆☆☆☆</option>
+      </select>
+      <input type="text" id="searchReviews" placeholder="Search reviews...">
+    </div>
+  </section>
+
+  <!-- Reviews Container -->
+  <div class="reviews-container">
+    <div class="reviews-grid" id="reviewsList">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="review-header">
+          <h3 class="review-laptop">Dell XPS 13</h3>
+        </div>
+        <div class="reviewer-info">
+          <img src="images/student1.jpeg" alt="Student" class="reviewer-avatar">
+          <div>
+            <p class="reviewer-name">Jackson Waweru</p>
+            <p class="reviewer-course">Business Information Technology, Meru University</p>
+          </div>
+        </div>
+        <div class="rating">★★★★★</div>
+        <div class="review-text">
+          <p>The Dell XPS 13 has been perfect for my programming courses. The lightweight design makes it easy to carry around campus, and the battery lasts through all my classes. The screen is gorgeous and the keyboard is comfortable for long coding sessions.</p>
+        </div>
+        <div class="pros-cons">
+          <h4>Pros</h4>
+          <ul>
+            <li>Excellent build quality</li>
+            <li>Long battery life</li>
+            <li>Bright, colorful display</li>
+          </ul>
+          <h4>Cons</h4>
+          <ul>
+            <li>Expensive</li>
+            <li>Limited ports</li>
+          </ul>
+        </div>
+        <p class="review-date">Posted: March 15, 2024</p>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="review-header">
+          <h3 class="review-laptop">MacBook Air M2</h3>
+        </div>
+        <div class="reviewer-info">
+          <img src="images/student2.jpeg" alt="Student" class="reviewer-avatar">
+          <div>
+            <p class="reviewer-name">Shenan Mumbi</p>
+            <p class="reviewer-course">Biochemistry, Meru University</p>
+          </div>
+        </div>
+        <div class="rating">★★★★☆</div>
+        <div class="review-text">
+          <p>As a biochemistry student, I needed a reliable laptop for research and data analysis. The M2 chip handles all my statistical software with ease. The only downside is some scientific software isn't available for macOS, so I occasionally need to use the computer lab.</p>
+        </div>
+        <div class="pros-cons">
+          <h4>Pros</h4>
+          <ul>
+            <li>Incredible performance</li>
+            <li>Silent operation (no fan)</li>
+            <li>Great battery life</li>
+          </ul>
+          <h4>Cons</h4>
+          <ul>
+            <li>Some software compatibility issues</li>
+            <li>Expensive to repair</li>
+          </ul>
+        </div>
+        <p class="review-date">Posted: February 28, 2024</p>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="review-header">
+          <h3 class="review-laptop">Lenovo ThinkPad X1 Carbon</h3>
+        </div>
+        <div class="reviewer-info">
+          <img src="images/king.jpg" alt="Student" class="reviewer-avatar">
+          <div><p class="reviewer-name">King Tonny Mulei Muli</p>
+            <p class="reviewer-course">Physics, Meru University</p>
+          </div>
+        </div>
+        <div class="rating">★★★★★</div>
+        <div class="review-text">
+          <p>This laptop is a workhorse for physics simulations and data analysis. The keyboard is the best I've used on any laptop, which is great for writing long reports. It's survived being dropped twice and still works perfectly - very durable!</p>
+        </div>
+        <div class="pros-cons">
+          <h4>Pros</h4>
+          <ul>
+            <li>Extremely durable</li>
+            <li>Best keyboard on any laptop</li>
+            <li>Powerful for simulations</li>
+          </ul>
+          <h4>Cons</h4>
+          <ul>
+            <li>Expensive</li>
+            <li>Average webcam quality</li>
+          </ul>
+        </div>
+        <p class="review-date">Posted: January 10, 2024</p>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card">
+        <div class="review-header">
+          <h3 class="review-laptop">HP Spectre x360</h3>
+        </div>
+        <div class="reviewer-info">
+          <img src="images/student4.jpeg" alt="Student" class="reviewer-avatar">
+          <div>
+            <p class="reviewer-name">Praise Nyuthe</p>
+            <p class="reviewer-course">Mathematics, Meru University</p>
+          </div>
+        </div>
+        <div class="rating">★★★★☆</div>
+        <div class="review-text">
+          <p>The 2-in-1 design is fantastic for math students - I can take notes by hand during lectures and then flip it to laptop mode for programming assignments. The OLED screen makes graphs and equations look crisp and clear.</p>
+        </div>
+        <div class="pros-cons">
+          <h4>Pros</h4>
+          <ul>
+            <li>Versatile 2-in-1 design</li>
+            <li>Beautiful OLED display</li>
+            <li>Good performance</li>
+          </ul>
+          <h4>Cons</h4>
+          <ul>
+            <li>Battery life could be better</li>
+            <li>Gets warm under heavy load</li>
+          </ul>
+        </div>
+        <p class="review-date">Posted: December 5, 2023</p>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-card">
+        <div class="review-header">
+          <h3 class="review-laptop">ASUS ZenBook 14 OLED</h3>
+        </div>
+        <div class="reviewer-info">
+          <img src="images/student5.jpeg" alt="Student" class="reviewer-avatar">
+          <div>
+            <p class="reviewer-name">Arnold Ateya</p>
+            <p class="reviewer-course">Environmental Science, Meru University</p>
+          </div>
+        </div>
+        <div class="rating">★★★☆☆</div>
+        <div class="review-text">
+          <p>Good value for money with the OLED display, but I've had some driver issues with scientific software. The screen is gorgeous for GIS work, but the battery drains quickly when running resource-intensive applications.</p>
+        </div>
+        <div class="pros-cons">
+          <h4>Pros</h4>
+          <ul>
+            <li>Affordable OLED option</li>
+            <li>Lightweight</li>
+            <li>Good keyboard</li>
+          </ul>
+          <h4>Cons</h4>
+          <ul>
+            <li>Driver compatibility issues</li>
+            <li>Mediocre battery life</li>
+          </ul>
+        </div>
+        <p class="review-date">Posted: November 20, 2023</p>
+      </div>
+
+      <!-- Review 6 -->
+      <div class="review-card">
+        <div class="review-header">
+          <h3 class="review-laptop">Acer Swift 3</h3>
+        </div>
+        <div class="reviewer-info">
+          <img src="images/student6.jpeg" alt="Student" class="reviewer-avatar">
+          <div>
+            <p class="reviewer-name">Meghan Adhiambo</p>
+            <p class="reviewer-course">Mechanical Engineering, Meru University</p>
+          </div>
+        </div>
+        <div class="rating">★★★☆☆</div>
+        <div class="review-text">
+          <p>A decent budget option for chemistry students. It handles my molecular modeling software adequately, though sometimes lags with complex simulations. The build quality is good for the price, but the screen could be brighter.</p>
+        </div>
+        <div class="pros-cons">
+          <h4>Pros</h4>
+          <ul>
+            <li>Affordable</li>
+            <li>Good performance for price</li>
+            <li>Lightweight</li>
+          </ul>
+          <h4>Cons</h4>
+          <ul>
+            <li>Dim display</li>
+            <li>Plastic build feels cheap</li>
+          </ul>
+        </div>
+        <p class="review-date">Posted: October 15, 2023</p>
+      </div>
+    </div>
+
+    <!-- Review Form -->
+    <div class="review-form">
+      <h3>Share Your Laptop Experience</h3>
+      <form id="reviewForm">
+        <div class="form-group">
+          <label for="reviewerName"></label>
+          <input type="text" id="reviewerName" required>
+        </div>
+        <div class="form-group">
+          <label for="reviewerCourse">Your Course & University</label>
+          <input type="text" id="reviewerCourse" required>
+        </div>
+        <div class="form-group">
+          <label for="reviewLaptop">Laptop Model</label>
+          <select id="reviewLaptop" required>
+            <option value="">Select a laptop</option>
+            <option value="Dell XPS 13">Dell XPS 13</option>
+            <option value="MacBook Air M2">MacBook Air M2</option>
+            <option value="Lenovo ThinkPad X1 Carbon">Lenovo ThinkPad X1 Carbon</option>
+            <option value="HP Spectre x360">HP Spectre x360</option>
+            <option value="ASUS ZenBook 14 OLED">ASUS ZenBook 14 OLED</option>
+            <option value="Acer Swift 3">Acer Swift 3</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="reviewRating">Rating</label>
+          <div class="rating-input">
+            <select id="reviewRating" required>
+              <option value="">Select rating</option>
+              <option value="5">★★★★★ (Excellent)</option>
+              <option value="4">★★★★☆ (Very Good)</option>
+              <option value="3">★★★☆☆ (Good)</option>
+              <option value="2">★★☆☆☆ (Fair)</option>
+              <option value="1">★☆☆☆☆ (Poor)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="reviewText">Your Review</label>
+          <textarea id="reviewText" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="reviewPros">Pros (separate with commas)</label>
+          <input type="text" id="reviewPros" placeholder="Lightweight, Good battery life, etc.">
+        </div>
+        <div class="form-group">
+          <label for="reviewCons">Cons (separate with commas)</label>
+          <input type="text" id="reviewCons" placeholder="Expensive, Limited ports, etc.">
+        </div>
+        <button type="submit" class="submit-btn">Submit Review</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 MUST Tech Center. All rights reserved.</p>
+      <ul class="social-links">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="https://www.instagram.com/kingmuli">Instagram</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Go to top">↑</button>
+
+  <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile menu toggle
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mainNav.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        mainNav.classList.remove('active');
+      }
+    });
+  });
+  
+  // Set active link based on current page
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+// handle mobile menu and active states
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile menu toggle
+  mobileMenuButton.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mainNav.classList.contains('active')) {
+        mobileMenuButton.classList.remove('active');
+        mainNav.classList.remove('active');
+      }
+      
+      // Update active state
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+  
+  // Set initial active link based on current page
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+    // Back to Top Button
+    window.onscroll = function() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("back-to-top").style.display = "block";
+      } else {
+        document.getElementById("back-to-top").style.display = "none";
+      }
+    };
+    
+    document.getElementById("back-to-top").onclick = function() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    };
+
+    // Review Form Submission
+    document.getElementById("reviewForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById("reviewerName").value;
+      const course = document.getElementById("reviewerCourse").value;
+      const laptop = document.getElementById("reviewLaptop").value;
+      const rating = parseInt(document.getElementById("reviewRating").value);
+      const text = document.getElementById("reviewText").value;
+      const pros = document.getElementById("reviewPros").value.split(',');
+      const cons = document.getElementById("reviewCons").value.split(',');
+      
+      // Create new review card
+      const reviewCard = document.createElement("div");
+      reviewCard.className = "review-card";
+      
+      // Generate stars based on rating
+      let stars = '';
+      for (let i = 0; i < 5; i++) {
+        stars += i < rating ? '★' : '☆';
+      }
+      
+      // Generate pros/cons lists
+      let prosList = '';
+      if (pros[0].trim() !== '') {
+        prosList = '<h4>Pros</h4><ul>' + pros.map(pro => `<li>${pro.trim()}</li>`).join('') + '</ul>';
+      }
+      
+      let consList = '';
+      if (cons[0].trim() !== '') {
+        consList = '<h4>Cons</h4><ul>' + cons.map(con => `<li>${con.trim()}</li>`).join('') + '</ul>';
+      }
+      
+      // Set today's date
+      const today = new Date();
+      const dateStr = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      
+      // Build review card HTML
+      reviewCard.innerHTML = `
+        <div class="review-header">
+          <h3 class="review-laptop">${laptop}</h3>
+        </div>
+        <div class="reviewer-info">
+          <img src="images/default-avatar.jpg" alt="Student" class="reviewer-avatar">
+          <div>
+            <p class="reviewer-name">${name}</p>
+            <p class="reviewer-course">${course}</p>
+          </div>
+        </div>
+        <div class="rating">${stars}</div>
+        <div class="review-text">
+          <p>${text}</p>
+        </div>
+        <div class="pros-cons">
+          ${prosList}
+          ${consList}
+        </div>
+        <p class="review-date">Posted: ${dateStr}</p>
+      `;
+      
+      // Add new review to the top of the list
+      document.getElementById("reviewsList").prepend(reviewCard);
+      
+      // Reset form
+      this.reset();
+      
+      // Show success message
+      alert('Thank you for your review! It has been added to the page.');
+    });
+
+    // Filter Reviews
+    document.getElementById("laptopFilter").addEventListener("change", filterReviews);
+    document.getElementById("ratingFilter").addEventListener("change", filterReviews);
+    document.getElementById("searchReviews").addEventListener("input", filterReviews);
+    
+    function filterReviews() {
+      const laptopFilter = document.getElementById("laptopFilter").value.toLowerCase();
+      const ratingFilter = document.getElementById("ratingFilter").value;
+      const searchText = document.getElementById("searchReviews").value.toLowerCase();
+      
+      const reviews = document.querySelectorAll(".review-card");
+      
+      reviews.forEach(review => {
+        const laptop = review.querySelector(".review-laptop").textContent.toLowerCase();
+        const rating = review.querySelector(".rating").textContent;
+        const reviewText = review.querySelector(".review-text").textContent.toLowerCase();
+        
+        const matchesLaptop = laptopFilter === '' || laptop.includes(laptopFilter);
+        const matchesRating = ratingFilter === '' || rating.length === parseInt(ratingFilter);
+        const matchesSearch = searchText === '' || 
+          reviewText.includes(searchText) || 
+          laptop.includes(searchText);
+        
+        if (matchesLaptop && matchesRating && matchesSearch) {
+          review.style.display = "block";
+        } else {
+          review.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

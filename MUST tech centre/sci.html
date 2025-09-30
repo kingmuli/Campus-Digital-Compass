@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUST Tech Center - SCI Recommendations</title>
+   <link rel="stylesheet" href="scistyle.css">
+</head>
+<body>
+   <!-- Header -->
+ <header class="glass-header">
+  <div class="header-content">
+    <a href="index.html" class="brand">
+      <span class="brand-main">MUST</span>
+      <span class="brand-sub">Tech Center</span>
+    </a>
+    
+    <nav class="main-nav">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link"><span>Home</span></a></li>
+          <li><a href="Recommendations.html" class="nav-link"><span>Recommendations</span></a></li>
+          <li><a href="reviews.html" class="nav-link"><span>Reviews</span></a></li>
+          <li><a href="comparison.html" class="nav-link"><span>Comparisons</span></a></li>
+          <li><a href="about.html" class="nav-link"><span>About</span></a></li>
+        </ul>
+        <div class="nav-indicator"></div>
+      </div>
+    </nav>
+    
+    <button class="hamburger" aria-label="Menu">
+      <div class="hamburger-inner"></div>
+    </button>
+  </div>
+</header>
+
+  <!-- Modern Hero Section -->
+  <section class="sci-hero">
+    <h2>Optimized Laptops for SCI Students</h2>
+    <p>Discover the perfect computing solution tailored for scientific computing, data analysis, and research needs.</p>
+  </section>
+
+  <!-- Modern Filter Section -->
+  <div class="filter-section">
+    <label for="budget-filter">Filter by Budget:</label>
+    <select id="budget-filter" onchange="filterByBudget(this.value)">
+      <option value="0">All Laptops</option>
+      <option value="100000">Under KSHS 100,000</option>
+      <option value="150000">Under KSHS 150,000</option>
+      <option value="200000">Under KSHS 200,000</option>
+      <option value="250000">Under KSHS 250,000</option>
+      <option value="300000">Under KSHS 300,000</option>
+    </select>
+  </div>
+  
+  <!-- Modern Laptop Grid -->
+  <div class="laptop-grid">
+    <!-- Laptop 1 -->
+    <div class="laptop-card">
+      <div class="performance-badge">Best Value</div>
+      <img src="images/acer-aspire-5.jpeg" alt="Acer Aspire 7">
+      <h3>Acer Aspire 7</h3>
+      <ul class="laptop-features">
+        <li>AMD Ryzen 5 5500U</li>
+        <li>8GB RAM</li>
+        <li>512GB SSD</li>
+        <li>15.6" FHD Display</li>
+        <li>NVIDIA GTX 1650</li>
+      </ul>
+      <button class="details-button" onclick="toggleDetails(event)">View Details</button>
+      <div class="laptop-details">
+        <p><strong>Price:</strong> <span>KSHS 119,999</span></p>
+        <p><strong>Battery Life:</strong> <span>Up to 6 hours</span></p>
+        <p><strong>Weight:</strong> <span>4.8 lbs</span></p>
+        <p><strong>OS:</strong> <span>Windows 11</span></p>
+        <p><strong>Warranty:</strong> <span>1 year</span></p>
+      </div>
+    </div>
+        <!-- Laptop 2 -->
+    <div class="laptop-card">
+      <img src="images/hp-pavilion-aero-13.jpeg" alt="HP Pavilion 15">
+      <h3>HP Pavilion 15</h3>
+      <ul class="laptop-features">
+        <li>Intel Core i5-1135G7</li>
+        <li>8GB RAM</li>
+        <li>512GB SSD</li>
+        <li>15.6" FHD Display</li>
+        <li>Backlit Keyboard</li>
+      </ul>
+      <button class="details-button" onclick="toggleDetails(event)">View Details</button>
+      <div class="laptop-details">
+        <p><strong>Price:</strong> <span>KSHS 109,999</span></p>
+        <p><strong>Battery Life:</strong> <span>Up to 7 hours</span></p>
+        <p><strong>Weight:</strong> <span>3.9 lbs</span></p>
+        <p><strong>OS:</strong> <span>Windows 11</span></p>
+        <p><strong>Warranty:</strong> <span>1 year</span></p>
+      </div>
+    </div>
+        <!-- Laptop 3 -->
+    <div class="laptop-card">
+      <div class="performance-badge">Editor's Pick</div>
+      <img src="images/asus-zenbook14.jpeg" alt="Asus ZenBook 14">
+      <h3>Asus ZenBook 14</h3>
+      <ul class="laptop-features">
+        <li>AMD Ryzen 5 Processor</li>
+        <li>8GB RAM</li>
+        <li>512GB SSD</li>
+        <li>14" Full HD Display</li>
+        <li>Lightweight and portable</li>
+      </ul>
+      <button class="details-button" onclick="toggleDetails(event)">View Details</button>
+      <div class="laptop-details">
+        <p><strong>Price:</strong> <span>KSHS 76,250</span></p>
+        <p><strong>Battery Life:</strong> <span>Up to 12 hours</span></p>
+        <p><strong>Weight:</strong> <span>2.65 lbs</span></p>
+        <p><strong>OS:</strong> <span>Windows 11 Home</span></p>
+        <p><strong>Warranty:</strong> <span>1 year limited</span></p>
+      </div>
+    </div>
+
+    <!-- Laptop 4 -->
+    <div class="laptop-card">
+      <img src="images/acer-swift3.jpeg" alt="Acer Swift 3">
+      <h3>Acer Swift 3</h3>
+      <ul class="laptop-features">
+        <li>AMD Ryzen 7 Processor</li>
+        <li>8GB RAM</li>
+        <li>512GB SSD</li>
+        <li>14" Full HD Display</li>
+        <li>Affordable and reliable</li>
+      </ul>
+      <button class="details-button" onclick="toggleDetails(event)">View Details</button>
+      <div class="laptop-details">
+        <p><strong>Price:</strong> <span>KSHS 103,600</span></p>
+        <p><strong>Battery Life:</strong> <span>Up to 11 hours</span></p>
+        <p><strong>Weight:</strong> <span>2.65 lbs</span></p>
+        <p><strong>OS:</strong> <span>Windows 11 Home</span></p>
+        <p><strong>Warranty:</strong> <span>1 year limited</span></p>
+      </div>
+    </div>
+
+    <!-- Laptop 5 -->
+    <div class="laptop-card">
+      <div class="performance-badge">Budget Pick</div>
+      <img src="images/dell-inspiron-14.jpeg" alt="Dell Inspiron 15">
+      <h3>Dell Inspiron 15</h3>
+      <ul class="laptop-features">
+        <li>Intel Core i5 Processor</li>
+        <li>8GB RAM</li>
+        <li>256GB SSD</li>
+        <li>15.6" Full HD Display</li>
+        <li>Budget-friendly option</li>
+      </ul>
+      <button class="details-button" onclick="toggleDetails(event)">View Details</button>
+      <div class="laptop-details">
+        <p><strong>Price:</strong> <span>KSHS 90,410</span></p>
+        <p><strong>Battery Life:</strong> <span>Up to 8 hours</span></p>
+        <p><strong>Weight:</strong> <span>3.91 lbs</span></p>
+        <p><strong>OS:</strong> <span>Windows 11 Home</span></p>
+        <p><strong>Warranty:</strong> <span>1 year limited</span></p>
+      </div>
+    </div>
+
+    <!-- Laptop 6 -->
+    <div class="laptop-card">
+      <img src="images/microsoft-surface.jpeg" alt="Microsoft Surface Laptop 4">
+      <h3>Microsoft Surface Laptop 4</h3>
+      <ul class="laptop-features">
+        <li>Intel Core i5-1135G7</li>
+        <li>8GB RAM</li>
+        <li>512GB SSD</li>
+        <li>13.5" Touch Display</li>
+        <li>Alcantara keyboard</li>
+      </ul>
+      <button class="details-button" onclick="toggleDetails(event)">View Details</button>
+      <div class="laptop-details">
+        <p><strong>Price:</strong> <span>KSHS 139,999</span></p>
+        <p><strong>Battery Life:</strong> <span>Up to 11 hours</span></p>
+        <p><strong>Weight:</strong> <span>2.8 lbs</span></p>
+        <p><strong>OS:</strong> <span>Windows 11</span></p>
+        <p><strong>Warranty:</strong> <span>1 year</span></p>
+      </div>
+    </div>
+
+    <!-- Laptop 7 -->
+    <div class="laptop-card">
+      <div class="performance-badge">Durable</div>
+      <img src="images/lenovo-thinkpad.jpg" alt="Lenovo ThinkPad E14">
+      <h3>Lenovo ThinkPad E14</h3>
+      <ul class="laptop-features">
+        <li>AMD Ryzen 5 5500U</li>
+        <li>16GB RAM</li>
+        <li>512GB SSD</li>
+        <li>14" FHD Display</li>
+        <li>Military-grade durability</li>
+      </ul>
+      <button class="details-button" onclick="toggleDetails(event)">View Details</button>
+      <div class="laptop-details">
+        <p><strong>Price:</strong> <span>KSHS 145,999</span></p>
+        <p><strong>Battery Life:</strong> <span>Up to 10 hours</span></p>
+        <p><strong>Weight:</strong> <span>3.3 lbs</span></p>
+        <p><strong>OS:</strong> <span>Windows 11 Pro</span></p>
+        <p><strong>Warranty:</strong> <span>3 years</span></p>
+      </div>
+    </div>
+
+    <!-- Laptop 8 -->
+    <div class="laptop-card">
+      <img src="images/dell-g1.jpeg" alt="Lenovo Yoga 7i">
+      <h3>Lenovo Yoga 7i</h3>
+      <ul class="laptop-features">
+        <li>Intel Core i5-1135G7</li>
+        <li>8GB RAM</li>
+        <li>512GB SSD</li>
+        <li>14" FHD Touch Display</li>
+        <li>2-in-1 Convertible</li>
+      </ul>
+      <button class="details-button" onclick="toggleDetails(event)">View Details</button>
+      <div class="laptop-details">
+        <p><strong>Price:</strong> <span>KSHS 69,999</span></p>
+        <p><strong>Battery Life:</strong> <span>Up to 13 hours</span></p>
+        <p><strong>Weight:</strong> <span>3.1 lbs</span></p>
+        <p><strong>OS:</strong> <span>Windows 11</span></p>
+        <p><strong>Warranty:</strong> <span>1 year</span></p>
+      </div>
+    </div>
+
+    <!-- Laptop 9 -->
+    <div class="laptop-card">
+      <div class="performance-badge">Convertible</div>
+      <img src="images/lenovo-ideapad-5pro.jpeg" alt="Lenovo Yoga 7i">
+      <h3>Lenovo Yoga 7i</h3>
+      <ul class="laptop-features">
+        <li>Intel Core i5 Processor</li>
+        <li>8GB RAM</li>
+        <li>512GB SSD</li>
+        <li>14" Full HD Touchscreen</li>
+        <li>2-in-1 convertible design</li>
+      </ul>
+      <button class="details-button" onclick="toggleDetails(event)">View Details</button>
+      <div class="laptop-details">
+        <p><strong>Price:</strong> <span>KSHS 142,145</span></p>
+        <p><strong>Battery Life:</strong> <span>Up to 9 hours</span></p>
+        <p><strong>Weight:</strong> <span>3.09 lbs</span></p>
+        <p><strong>OS:</strong> <span>Windows 11 Home</span></p>
+        <p><strong>Warranty:</strong> <span>1 year limited</span></p>
+      </div>
+    </div>
+
+    <!-- Laptop 10 -->
+    <div class="laptop-card">
+      <img src="images/microsoft-surface.jpeg" alt="Microsoft Surface Laptop 4">
+      <h3>Microsoft Surface Laptop 4</h3>
+      <ul class="laptop-features">
+        <li>AMD Ryzen 5 Processor</li>
+        <li>8GB RAM</li>
+        <li>256GB SSD</li>
+        <li>13.5" Touchscreen Display</li>
+        <li>Premium build quality</li>
+      </ul>
+      <button class="details-button" onclick="toggleDetails(event)">View Details</button>
+      <div class="laptop-details">
+        <p><strong>Price:</strong> <span>KSHS 168,015</span></p>
+        <p><strong>Battery Life:</strong> <span>Up to 11.5 hours</span></p>
+        <p><strong>Weight:</strong> <span>2.79 lbs</span></p>
+        <p><strong>OS:</strong> <span>Windows 11 Home</span></p>
+        <p><strong>Warranty:</strong> <span>1 year limited</span></p>
+      </div>
+    </div>
+
+    <!-- Laptop 11 -->
+    <div class="laptop-card">
+      <div class="performance-badge">Performance</div>
+      <img src="images/asus-zenbook14.jpeg" alt="ASUS ZenBook 14">
+      <h3>ASUS ZenBook 14</h3>
+      <ul class="laptop-features">
+        <li>AMD Ryzen 7 5700U</li>
+        <li>16GB RAM</li>
+        <li>1TB SSD</li>
+        <li>14" FHD NanoEdge Display</li>
+        <li>ErgoLift Hinge</li>
+      </ul>
+      <button class="details-button" onclick="toggleDetails(event)">View Details</button>
+      <div class="laptop-details">
+        <p><strong>Price:</strong> <span>KSHS 149,999</span></p>
+        <p><strong>Battery Life:</strong> <span>Up to 10 hours</span></p>
+        <p><strong>Weight:</strong> <span>2.6 lbs</span></p>
+        <p><strong>OS:</strong> <span>Windows 11</span></p>
+        <p><strong>Warranty:</strong> <span>1 year</span></p>
+      </div>
+    </div>
+
+    <!-- Laptop 12 -->
+    <div class="laptop-card">
+      <img src="images/msi-modern-14.jpeg" alt="MSI Modern 14">
+      <h3>MSI Modern 14</h3>
+      <ul class="laptop-features">
+        <li>AMD Ryzen 7 5700U</li>
+        <li>16GB RAM</li>
+        <li>512GB SSD</li>
+        <li>14" FHD Display</li>
+        <li>Ultra-slim design</li>
+      </ul>
+      <button class="details-button" onclick="toggleDetails(event)">View Details</button>
+      <div class="laptop-details">
+        <p><strong>Price:</strong> <span>KSHS 89,499</span></p>
+        <p><strong>Battery Life:</strong> <span>Up to 8 hours</span></p>
+        <p><strong>Weight:</strong> <span>2.6 lbs</span></p>
+        <p><strong>OS:</strong> <span>Windows 11</span></p>
+        <p><strong>Warranty:</strong> <span>2 years</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison Modal (Hidden by default) -->
+  <div id="comparison-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Compare Laptops</h2>
+      <div id="comparison-container"></div>
+      <button id="clear-comparison" class="modal-button">Clear Comparison</button>
+    </div>
+  </div>
+
+  <!-- Enhanced JavaScript -->
+  <script>
+    // Enhanced toggleDetails function with animation
+    function toggleDetails(event) {
+      event.preventDefault();
+      const button = event.target;
+      const details = button.nextElementSibling;
+      
+      if (details.style.display === "block") {
+        details.style.animation = "fadeOut 0.3s ease-out";
+        setTimeout(() => {
+          details.style.display = "none";
+          button.textContent = "View Details";
+        }, 250);
+      } else {
+        details.style.display = "block";
+        details.style.animation = "fadeIn 0.3s ease-out";
+        button.textContent = "Hide Details";
+      }
+    }
+
+    // Enhanced filter function with animation
+    function filterByBudget(maxBudget) {
+      const laptopCards = document.querySelectorAll('.laptop-card');
+      maxBudget = parseInt(maxBudget);
+      
+      laptopCards.forEach((card) => {
+        const priceText = card.querySelector('.laptop-details p:first-child span').textContent;
+        const price = parseInt(priceText.replace(/[^\d]/g, ''));
+        
+        if (maxBudget === 0 || price <= maxBudget) {
+          card.style.animation = "fadeIn 0.5s ease-out";
+          card.style.display = 'block';
+        } else {
+          card.style.animation = "fadeOut 0.3s ease-out";
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 250);
+        }
+      });
+    }
+
+    // Add to comparison functionality
+    const comparisonList = [];
+    
+    function addToComparison(laptopId) {
+      if (!comparisonList.includes(laptopId)) {
+        comparisonList.push(laptopId);
+        updateComparisonBadge();
+      }
+    }
+
+    function updateComparisonBadge() {
+      const badge = document.getElementById('comparison-badge');
+      if (comparisonList.length > 0) {
+        badge.textContent = comparisonList.length;
+        badge.style.display = 'block';
+      } else {
+        badge.style.display = 'none';
+      }
+    }
+
+    // Modal functionality
+    const modal = document.getElementById('comparison-modal');
+    const closeModal = document.querySelector('.close-modal');
+    
+    function openComparisonModal() {
+      if (comparisonList.length > 0) {
+        // Populate comparison container
+        modal.style.display = 'block';
+      }
+    }
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // Additional animation keyframes
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeOut {
+        from { opacity: 1; transform: translateY(0); }
+        to { opacity: 0; transform: translateY(10px); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Initialize tooltips
+    tippy('[data-tippy-content]', {
+      arrow: true,
+      animation: 'scale',
+      duration: 200,
+      theme: 'must'
+    });
+  </script>
+</body>
+</html>  

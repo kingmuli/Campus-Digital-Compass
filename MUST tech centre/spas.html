@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Science Laptop Guide</title>
+  <style>
+    /* General Styles */
+    :root {
+      --primary: indianred;
+      --secondary: #4ECDC4;
+      --dark: #292F36;
+      --light: #F7FFF7;
+      --accent: #FFE66D;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFF5F5;
+      color: var(--dark);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    body.dark-mode {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+    }
+    
+    body.dark-mode .laptop-card,
+    body.dark-mode .filter-section {
+      background-color: #2d2d2d;
+      color: #f0f0f0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    body.dark-mode .laptop-card h3 {
+      color: var(--secondary);
+    }
+    
+    body.dark-mode .filter-controls input,
+    body.dark-mode .filter-controls select {
+      background-color: #3d3d3d;
+      color: #f0f0f0;
+      border-color: #555;
+    }
+    
+    :root {
+  --primary: indianred;
+  --secondary: #4ECDC4;
+  --dark: #292F36;
+  --light: #F7FFF7;
+  --accent: #FFE66D;
+  --transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Modern Glass Header - Updated Background */
+.glass-header {
+  background: rgba(205, 92, 92, 0.9); /* Indian Red with 90% opacity */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(247, 255, 247, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.2rem 0;
+  position: relative;
+}
+
+/* Brand Styles */
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.brand-main {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.brand-sub {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--light);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Navigation Styles */
+.main-nav {
+  position: relative;
+}
+
+.nav-container {
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.nav-link span {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 47, 54, 0.7); /* Dark with opacity */
+  z-index: 1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  border-radius: 6px;
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-link:hover {
+  color: var(--light);
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--secondary);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 100;
+}
+
+.hamburger-inner {
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  position: relative;
+  transition: var(--transition);
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  top: 8px;
+}
+
+.hamburger.active .hamburger-inner {
+  background: transparent;
+}
+
+.hamburger.active .hamburger-inner::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .glass-header {
+    padding: 0 1.5rem;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--dark);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: var(--transition);
+    padding-top: 6rem;
+  }
+  
+  .main-nav.active {
+    transform: translateX(0);
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0 1.5rem;
+  }
+  
+  .nav-link {
+    border-radius: 6px;
+  }
+  
+  .nav-indicator {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Animation for nav indicator */
+.nav-links li:nth-child(1):hover ~ .nav-indicator {
+  transform: translateX(0%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(2):hover ~ .nav-indicator {
+  transform: translateX(100%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(3):hover ~ .nav-indicator {
+  transform: translateX(200%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(4):hover ~ .nav-indicator {
+  transform: translateX(300%);
+  width: 20%;
+}
+
+.nav-links li:nth-child(5):hover ~ .nav-indicator {
+  transform: translateX(400%);
+  width: 20%;
+}
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/science-hero.jpeg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    
+    .hero-content h2 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+      margin: 10px 0 20px;
+    }
+
+    /* Filter Section */
+    .filter-section {
+      padding: 20px;
+      background-color: white;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    
+    .filter-controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-controls input,
+    .filter-controls select,
+    .filter-controls button {
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+      font-size: 1rem;
+      min-width: 200px;
+      transition: all 0.3s ease;
+    }
+
+    /* Laptop Grid */
+    .laptop-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .laptop-card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .laptop-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    
+    .laptop-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      height: 200px;
+      object-fit: contain;
+    }
+    
+    .laptop-card h3 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+    
+    .laptop-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0;
+      text-align: left;
+    }
+    
+    .laptop-card ul li {
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .laptop-card ul li::before {
+      content: "•";
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-right: 8px;
+    }
+    
+    .details-button {
+      background-color: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .details-button:hover {
+      background-color: var(--accent);
+      color: var(--dark);
+    }
+
+    .favorite-button {
+      background-color: var(--accent);
+      color: var(--dark);
+      padding: 8px 15px;
+      border-radius: 30px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+    
+    .favorite-button:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+      transition: opacity 0.3s ease;
+    }
+    
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    
+    body.dark-mode .modal-content {
+      background-color: #2d2d2d;
+      color: #f0f0f0;
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--primary);
+    }
+    
+    .close-modal:hover {
+      color: var(--accent);
+    }
+    
+    .modal-title {
+      color: var(--primary);
+      margin-top: 0;
+    }
+    
+    .modal-price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 10px 0;
+      color: var(--dark);
+    }
+    
+    body.dark-mode .modal-price {
+      color: var(--light);
+    }
+    
+    .modal-reason {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    
+    body.dark-mode .modal-reason {
+      background-color: #3d3d3d;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .social-links {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      z-index: 99;
+    }
+    
+    #back-to-top:hover {
+      background-color: var(--accent);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    /* Toggle Switch */
+    .toggle-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .toggle-switch input {
+      display: none;
+    }
+    
+    .toggle-switch label {
+      background-color: #ccc;
+      border-radius: 34px;
+      cursor: pointer;
+      display: inline-block;
+      height: 20px;
+      position: relative;
+      width: 40px;
+    }
+    
+    .toggle-switch label:after {
+      background-color: #fff;
+      border-radius: 50%;
+      content: "";
+      height: 14px;
+      left: 3px;
+      position: absolute;
+      top: 3px;
+      transition: 0.3s;
+      width: 14px;
+    }
+    
+    .toggle-switch input:checked + label {
+      background-color: var(--primary);
+    }
+    
+    .toggle-switch input:checked + label:after {
+      transform: translateX(20px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+    
+      header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+      }
+    
+      .filter-controls {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .filter-controls input,
+      .filter-controls select,
+      .filter-controls button {
+        width: 100%;
+      }
+
+      .toggle-switch {
+        position: static;
+        margin-top: 15px;
+        justify-content: center;
+      }
+      
+      .modal-content {
+        width: 90%;
+        margin: 20% auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+ <header class="glass-header">
+  <div class="header-content">
+    <a href="index.html" class="brand">
+      <span class="brand-main">MUST</span>
+      <span class="brand-sub">Tech Center</span>
+    </a>
+    
+    <nav class="main-nav">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link"><span>Home</span></a></li>
+          <li><a href="Recommendations.html" class="nav-link"><span>Recommendations</span></a></li>
+          <li><a href="reviews.html" class="nav-link"><span>Reviews</span></a></li>
+          <li><a href="comparison.html" class="nav-link"><span>Comparisons</span></a></li>
+          <li><a href="about.html" class="nav-link"><span>About</span></a></li>
+        </ul>
+        <div class="nav-indicator"></div>
+      </div>
+    </nav>
+    
+    <button class="hamburger" aria-label="Menu">
+      <div class="hamburger-inner"></div>
+    </button>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Find Your Perfect Science Laptop</h2>
+      <p>Compare top laptops for science students and researchers</p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="filter-controls">
+      <input type="text" id="searchInput" placeholder="Search by name, specs, or reason..." onkeyup="filterLaptops()">
+      <select id="priceFilter" onchange="filterLaptops()">
+        <option value="">Filter by Price</option>
+        <option value="low">Below KES 100,000</option>
+        <option value="mid">KES 100,000 - 200,000</option>
+        <option value="high">Above KES 200,000</option>
+      </select>
+      <button id="favoritesToggle" onclick="toggleFavoritesView()">Show Favorites</button>
+    </div>
+  </section>
+
+  <!-- Laptops Section -->
+  <div class="laptop-container" id="laptopList"></div>
+
+  <!-- Modal -->
+  <div id="laptopModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <div class="modal-price" id="modalPrice"></div>
+      <div class="modal-specs">
+        <h4>Specifications:</h4>
+        <ul id="modalSpecs"></ul>
+      </div>
+      <div class="modal-reason">
+        <h4>Why Use It:</h4>
+        <p id="modalReason"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Science Students' Guide Kenya. All rights reserved.</p>
+      <ul class="social-links">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Go to top">↑</button>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile menu toggle
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mainNav.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        mainNav.classList.remove('active');
+      }
+    });
+  });
+  
+  // Set active link based on current page
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+// handle mobile menu and active states
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Mobile menu toggle
+  mobileMenuButton.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mainNav.classList.contains('active')) {
+        mobileMenuButton.classList.remove('active');
+        mainNav.classList.remove('active');
+      }
+      
+      // Update active state
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+  
+  // Set initial active link based on current page
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+    const laptops = [
+      {
+        name: "Dell XPS 13",
+        specs: ["Intel Core i7 (13th Gen)", "16GB RAM", "512GB SSD", "13.4\" FHD+ display"],
+        price: 170000,
+        image: "images/dell-xps-13.jpeg",
+        reason: "Powerful processor, compact, long battery life.",
+        category: "All"
+      },
+      {
+        name: "Apple MacBook Air M2",
+        specs: ["M2 chip", "16GB RAM", "512GB SSD", "13.6\" Retina display"],
+        price: 180000,
+        image: "images/macbook-air-m2.jpeg",
+        reason: "Great for coding and analysis; lightweight for campus; clear display; macOS supports science tools.",
+        category: "All"
+      },
+      {
+        name: "Lenovo ThinkPad X1 Carbon Gen 11",
+        specs: ["Intel Core i7", "32GB RAM", "1TB SSD", "14\" WUXGA display"],
+        price: 170000,
+        image: "images/thinkpad-x1.jpeg",
+        reason: "High RAM for multitasking; durable for campus; large storage; reliable for research.",
+        category: "All"
+      },
+      {
+        name: "HP Spectre x360 14",
+        specs: ["Intel Core i7 (13th Gen)", "16GB RAM", "1TB SSD", "13.5\" OLED touchscreen"],
+        price: 135000,
+        image: "images/hp-spectrex360.jpeg",
+        reason: "Convertible; vivid screen for modeling; strong performance; ample storage.",
+        category: "All"
+      },
+      {
+        name: "ASUS ZenBook 14 OLED",
+        specs: ["AMD Ryzen 7", "16GB RAM", "512GB SSD", "14\" 2.8K OLED display"],
+        price: 167890,
+        image: "images/asus-zenbook14.jpeg",
+        reason: "Parallel computing; vibrant visuals; lightweight; cost-effective power.",
+        category: "All"
+      },
+      {
+        name: "Acer Swift 3",
+        specs: ["AMD Ryzen 5", "8GB RAM", "512GB SSD", "14\" FHD display"],
+        price: 154390,
+        image: "images/acer-swift3.jpeg",
+        reason: "Budget-friendly; decent for coding; portable for fieldwork.",
+        category: "All"
+      },
+      {
+        name: "Microsoft Surface Laptop 5",
+        specs: ["Intel Core i7", "16GB RAM", "512GB SSD", "13.5\" PixelSense touchscreen"],
+        price: 167890,
+        image: "images/microsoftsurface-5.jpeg",
+        reason: "Touchscreen; strong processor; sleek and portable; Windows compatibility.",
+        category: "All"
+      },
+      {
+        name: "Lenovo IdeaPad 5 Pro",
+        specs: ["AMD Ryzen 7", "16GB RAM", "1TB SSD", "16\" 2.5K display"],
+        price: 115670,
+        image: "images/lenovo-ideapad-5pro.jpeg",
+        reason: "Large screen; powerful CPU; ample storage; great value.",
+        category: "All"
+      },
+      {
+        name: "Dell Inspiron 14",
+        specs: ["Intel Core i5 (12th Gen)", "8GB RAM", "512GB SSD", "14\" FHD display"],
+        price: 176785,
+        image: "images/dell-inspiron-14.jpeg",
+        reason: "Affordable; capable for basics; portable.",
+        category: "All"
+      },
+      {
+        name: "HP Pavilion Aero 13",
+        specs: ["AMD Ryzen 5", "16GB RAM", "512GB SSD", "13.3\" WUXGA display"],
+        price: 85000,
+        image: "images/hp-pavilion-aero-13.jpeg",
+        reason: "Ultra-light; solid performance; crisp display.",
+        category: "All"
+      },
+      {
+        name: "ASUS ROG Zephyrus G14",
+        specs: ["AMD Ryzen 9", "16GB RAM", "1TB SSD", "14\" QHD 120Hz display"],
+        price: 98600,
+        image: "images/asus-rog-zephyrus-g14.jpeg",
+        reason: "High-end for simulations; 3D modeling; future-proof.",
+        category: "All"
+      },
+      {
+        name: "Apple MacBook Pro 14 (M3)",
+        specs: ["M3 Pro chip", "18GB RAM", "512GB SSD", "14.2\" Liquid Retina XDR"],
+        price: 112000,
+        image: "images/apple-macbook-pro14.jpeg",
+        reason: "Superior for heavy loads; UNIX support; long battery.",
+        category: "All"
+      },
+      {
+        name: "Acer Aspire 5",
+        specs: ["Intel Core i5", "8GB RAM", "512GB SSD", "15.6\" FHD display"],
+        price: 96000,
+        image: "images/acer-aspire-5.jpeg",
+        reason: "Budget-friendly; large screen; widely available.",
+        category: "All"
+      },
+      {
+        name: "Lenovo Legion 5",
+        specs: ["AMD Ryzen 7", "16GB RAM", "512GB SSD", "15.6\" FHD 165Hz display"],
+        price: 675900,
+        image: "images/lenovo-legion-5.jpeg",
+        reason: "Robust; good cooling; durable.",
+        category: "All"
+      },
+      {
+        name: "HP Envy 13",
+        specs: ["Intel Core i7", "16GB RAM", "512GB SSD", "13.3\" FHD display"],
+        price: 96900,
+        image: "images/hp-envy-13.jpeg",
+        reason: "Sleek portability; good battery; premium build.",
+        category: "All"
+      },
+      {
+        name: "Dell Latitude 7440",
+        specs: ["Intel Core i7", "16GB RAM", "512GB SSD", "14\" FHD+ display"],
+        price: 112908,
+        image: "images/dell-latitude-7440.jpeg",
+        reason: "Durable; lightweight; enterprise support.",
+        category: "All"
+      },
+      {
+        name: "ASUS VivoBook 15",
+        specs: ["Intel Core i5", "8GB RAM", "512GB SSD", "15.6\" FHD display"],
+        price: 456678,
+        image: "images/asus-vivobook-15.jpeg",
+        reason: "Affordable; multitasking; great value.",
+        category: "All"
+      },
+      {
+        name: "Samsung Galaxy Book 2 Pro",
+        specs: ["Intel Core i7", "16GB RAM", "512GB SSD", "13.3\" AMOLED display"],
+        price: 56790,
+        image: "images/samsunggalaxy-book2-pro.jpeg",
+        reason: "Vivid screen; strong coding performance; sleek.",
+        category: "All"
+      },
+      {
+        name: "MSI Modern 14",
+        specs: ["Intel Core i5", "8GB RAM", "512GB SSD", "14\" FHD display"],
+        price: 96000,
+        image: "images/msi-modern-14.jpeg",
+        reason: "Budget-friendly; capable for apps; compact.",
+        category: "All"
+      },
+      {
+        name: "HP Omen 15",
+        specs: ["AMD Ryzen 7", "16GB RAM", "1TB SSD", "15.6\" FHD 144Hz display"],
+        price: 112980,
+        image: "images/hp-omen-15.jpeg",
+        reason: "High performance; large storage; fast display.",
+        category: "All"
+      }
+    ];
+
+    let favorites = [];
+    let showFavoritesOnly = false;
+    let darkMode = false;
+
+    // Initialize
+    document.addEventListener("DOMContentLoaded", () => {
+      renderLaptops();
+      
+      // Back to Top Button
+      window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("back-to-top").style.display = "block";
+        } else {
+          document.getElementById("back-to-top").style.display = "none";
+        }
+      };
+      
+      document.getElementById("back-to-top").onclick = function() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      };
+      
+      // Dark Mode Toggle
+      document.getElementById("darkModeToggle").addEventListener("change", function() {
+        darkMode = this.checked;
+        document.body.classList.toggle("dark-mode", darkMode);
+        localStorage.setItem('darkMode', darkMode);
+      });
+      
+      // Load dark mode preference from localStorage if available
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.getElementById("darkModeToggle").checked = true;
+        document.body.classList.add("dark-mode");
+        darkMode = true;
+      }
+      
+      // Close modal when clicking outside content
+      document.getElementById('laptopModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeModal();
+        }
+      });
+    });
+
+    // Modal functions
+    function openModal(laptopName) {
+      const modal = document.getElementById("laptopModal");
+      const laptop = laptops.find(l => l.name === laptopName);
+      
+      if (laptop) {
+        document.getElementById("modalTitle").textContent = laptop.name;
+        document.getElementById("modalPrice").textContent = `Price: KES ${laptop.price.toLocaleString()}`;
+        
+        const specsList = document.getElementById("modalSpecs");
+        specsList.innerHTML = "";
+        laptop.specs.forEach(spec => {
+          const li = document.createElement("li");
+          li.textContent = spec;
+          specsList.appendChild(li);
+        });
+        
+        document.getElementById("modalReason").textContent = laptop.reason;
+        modal.style.display = "block";
+      }
+    }
+
+    function closeModal() {
+      document.getElementById("laptopModal").style.display = "none";
+    }
+
+    // Toggle Favorites View
+    function toggleFavoritesView() {
+      showFavoritesOnly = !showFavoritesOnly;
+      document.getElementById("favoritesToggle").textContent = 
+        showFavoritesOnly ? "Show All" : "Show Favorites";
+      filterLaptops();
+    }
+
+    // Toggle Favorite
+    function toggleFavorite(laptopName, event) {
+      event.stopPropagation(); // Prevent event bubbling
+      
+      const index = favorites.indexOf(laptopName);
+      if (index > -1) {
+        favorites.splice(index, 1);
+      } else {
+        favorites.push(laptopName);
+      }
+      
+      // Save favorites to localStorage
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      
+      renderLaptops();
+    }
+
+    // Filter Laptops
+    function filterLaptops() {
+      const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+      const priceFilter = document.getElementById("priceFilter").value;
+      
+      let filtered = laptops.filter(laptop => {
+        // Search filter
+        const matchesSearch = 
+          laptop.name.toLowerCase().includes(searchTerm) ||
+          laptop.specs.some(spec => spec.toLowerCase().includes(searchTerm)) ||
+          laptop.reason.toLowerCase().includes(searchTerm);
+        
+        // Price filter
+        let matchesPrice = true;
+        if (priceFilter === "low") matchesPrice = laptop.price < 100000;
+        else if (priceFilter === "mid") matchesPrice = laptop.price >= 100000 && laptop.price <= 200000;
+        else if (priceFilter === "high") matchesPrice = laptop.price > 200000;
+        
+        // Favorites filter
+        const matchesFavorites = !showFavoritesOnly || favorites.includes(laptop.name);
+        
+        return matchesSearch && matchesPrice && matchesFavorites;
+      });
+      
+      renderLaptops(filtered);
+    }
+
+    // Render Laptops
+    function renderLaptops(filteredLaptops = laptops) {
+      const container = document.getElementById("laptopList");
+      container.innerHTML = "";
+      
+      // Load favorites from localStorage if available
+      const savedFavorites = localStorage.getItem('favorites');
+      if (savedFavorites) {
+        favorites = JSON.parse(savedFavorites);
+      }
+      
+      filteredLaptops.forEach(laptop => {
+        const isFavorite = favorites.includes(laptop.name);
+        const card = document.createElement("div");
+        card.className = "laptop-card";
+        card.innerHTML = `
+          <img src="${laptop.image}" alt="${laptop.name}" />
+          <h3>${laptop.name}</h3>
+          <p><strong>Specs:</strong></p>
+          <ul>${laptop.specs.map(spec => `<li>${spec}</li>`).join("")}</ul>
+          <button class="details-button" onclick="openModal('${laptop.name}')">View Details</button>
+          <button class="favorite-button" onclick="toggleFavorite('${laptop.name}', event)">
+            ${isFavorite ? '❤️ Remove Favorite' : '♡ Add Favorite'}
+          </button>
+        `;
+        container.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>

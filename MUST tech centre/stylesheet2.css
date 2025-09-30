@@ -1,0 +1,105 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* SPAS Laptops Section */
+.spas-laptops {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.spas-laptops h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Laptop Grid */
+.laptop-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Laptop Card */
+.laptop-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.laptop-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.laptop-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.laptop-card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #007BFF;
+}
+
+.laptop-card ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.laptop-card ul li {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.details-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: #0056b3;
+}
