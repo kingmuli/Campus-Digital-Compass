@@ -31,8 +31,8 @@ The complete tech recommendation platform for Meru University students.
 
 ## Quick Start
 
-```bash
-git clone https://github.com/yourusername/must-tech-center.git
+```bash[
+git clone https://github.com/kingmuli/Campus-Digital-Compass.git
 cd must-tech-center
 open index.html
 
